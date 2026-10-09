@@ -82,7 +82,7 @@
 }
 
 .nav-list-item:hover {
-    background-color: #8f6b64;
+    background-color:  #ac9692;
 
     & > a,
     & > i {
@@ -114,7 +114,7 @@
     width: 100%;
 }
 .logout-btn:hover{
-    background-color: #8f6b64;
+    background-color: #ac9692;
     &>span{
         color: #EADBD2;
     }
