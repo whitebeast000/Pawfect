@@ -14,7 +14,7 @@
             
             <nav class="nav-section">
                 <div class="logo">
-                    <img src="../Images/pawcare-logo.svg" alt="">
+                    <img src="Pawfect_Logo.png" alt="">
                 </div>
 
                 <div class="nav-list">
@@ -42,17 +42,211 @@
             </div>
         
         </div>
-
-
-
-
         
         <div class="right">
 
-            <main >
-                <h1>saddddd</h1>
+            <main class="main">
 
-            </main>
+  <!-- Top bar -->
+  <header class="topbar">
+    <div>
+      <h1 class="greeting">Good morning!</h1>
+      <p class="greeting-sub">Let’s take care of your furry friends.</p>
+    </div>
+    <a href="add-pet.html" class="btn btn-primary">+ Add Pet</a>
+  </header>
+
+  <!-- Hero banner -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="hero-eyebrow">Healthier pets · Happier lives</p>
+      <h2 class="hero-title">Because they deserve<br>the best.</h2>
+      <p class="hero-text">2 care tasks left today and 1 reminder needs your attention.</p>
+      
+      <br><a href="daily-care.html" class="btn btn-primary">View today’s care →</a>
+    </div>
+
+    <!-- Put the second image here (see path below) -->
+    <div class="hero-art">
+      <img src="Animal.jpeg" alt="A happy dog and cat peeking over a ledge">
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats">
+    <article class="stat-card">
+      <span class="stat-icon stat-icon--dark">♥</span>
+      <div>
+        <p class="stat-number">3</p>
+        <p class="stat-label">Pets</p>
+      </div>
+    </article>
+
+    <article class="stat-card">
+      <span class="stat-icon stat-icon--light">+</span>
+      <div>
+        <p class="stat-number">8</p>
+        <p class="stat-label">Vaccinations</p>
+      </div>
+    </article>
+
+    <article class="stat-card">
+      <span class="stat-icon stat-icon--dark">◷</span>
+      <div>
+        <p class="stat-number">2</p>
+        <p class="stat-label">Visits</p>
+      </div>
+    </article>
+
+    <article class="stat-card">
+      <span class="stat-icon stat-icon--light">!</span>
+      <div>
+        <p class="stat-number">1</p>
+        <p class="stat-label">Need attention</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- Today's care + Upcoming -->
+  <section class="grid-two">
+
+    <!-- Today's care -->
+    <article class="card">
+      <h3 class="card-title">Today’s care</h3>
+
+      <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="4" aria-valuenow="2">
+  <div class="progress-bar" id="progressBar"></div>
+</div>
+<p class="progress-text" id="progressText">2 of 4 done</p>
+
+      <ul class="task-list">
+        <li class="task">
+          <label>
+            <input type="checkbox" checked>
+            <span class="check"></span>
+            <span class="task-name">Max’s breakfast</span>
+          </label>
+          <time class="task-time">8:00 AM</time>
+        </li>
+        <li class="task">
+          <label>
+            <input type="checkbox" checked>
+            <span class="check"></span>
+            <span class="task-name">Luna’s water</span>
+          </label>
+          <time class="task-time">3:00 PM</time>
+        </li>
+        <li class="task">
+          <label>
+            <input type="checkbox">
+            <span class="check"></span>
+            <span class="task-name">Max’s walk</span>
+          </label>
+          <time class="task-time">5:00 PM</time>
+        </li>
+        <li class="task">
+          <label>
+            <input type="checkbox">
+            <span class="check"></span>
+            <span class="task-name">Luna’s medicine</span>
+          </label>
+          <time class="task-time">8:00 PM</time>
+        </li>
+      </ul>
+    </article>
+
+    <!-- Upcoming & reminders -->
+    <article class="card">
+      <h3 class="card-title">Upcoming &amp; reminders</h3>
+
+      <ul class="reminder-list">
+        <li class="reminder">
+          <span class="reminder-icon">+</span>
+          <div class="reminder-info">
+            <p class="reminder-title">Rabies — Max</p>
+            <p class="reminder-sub">Vaccination due</p>
+          </div>
+          <span class="badge badge--soon">In 3 days</span>
+        </li>
+
+        <li class="reminder">
+          <span class="reminder-icon">◷</span>
+          <div class="reminder-info">
+            <p class="reminder-title">Dr. Ahmed — Luna</p>
+            <p class="reminder-sub">Regular checkup · 4:00 PM</p>
+          </div>
+          <span class="badge badge--date">15 Oct</span>
+        </li>
+
+        <li class="reminder">
+          <span class="reminder-icon">+</span>
+          <div class="reminder-info">
+            <p class="reminder-title">Distemper — Max</p>
+            <p class="reminder-sub">Vaccination</p>
+          </div>
+          <span class="badge badge--overdue">Overdue</span>
+        </li>
+      </ul>
+    </article>
+  </section>
+
+  <!-- My pets -->
+  <section class="card pets-card">
+    <h3 class="card-title">My pets</h3>
+
+    <div class="pets-row">
+      <a href="pet.html?name=max" class="pet">
+        <span class="pet-avatar">🐶</span>
+        <span class="pet-name">Max</span>
+        <span class="pet-breed">Golden Retriever</span>
+      </a>
+
+      <a href="pet.html?name=luna" class="pet">
+        <span class="pet-avatar">🐱</span>
+        <span class="pet-name">Luna</span>
+        <span class="pet-breed">Persian Cat</span>
+      </a>
+
+      <a href="pet.html?name=coco" class="pet">
+        <span class="pet-avatar">🐰</span>
+        <span class="pet-name">Coco</span>
+        <span class="pet-breed">Holland Lop</span>
+      </a>
+
+      <a href="add-pet.html" class="pet pet-add">
+        <span class="pet-avatar pet-avatar--add">+</span>
+        <span class="pet-name">Add pet</span>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<!-- Progress: counts the tasks automatically -->
+<script>
+  (function () {
+    var boxes = document.querySelectorAll('.task-list input[type="checkbox"]');
+    var bar = document.getElementById('progressBar');
+    var text = document.getElementById('progressText');
+    var progress = document.querySelector('.progress');
+    var total = boxes.length;   // 4 tasks
+
+    progress.setAttribute('aria-valuemax', total);
+
+    function update() {
+      var done = 0;
+      boxes.forEach(function (b) { if (b.checked) done++; });
+      bar.style.width = (done / total * 100) + '%';
+      text.textContent = done + ' of ' + total + ' done';
+      progress.setAttribute('aria-valuenow', done);
+    }
+
+    update();
+    boxes.forEach(function (b) { b.addEventListener('change', update); });
+  })();
+</script>
+<!-- ============ PASTE UNTIL HERE ============ -->
+
         </div>
 
     </div>

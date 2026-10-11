@@ -29,8 +29,18 @@
 
     padding: 20px 30px;
 }
-.logo>img {
-    width: 50px;
+.logo {
+    height: 80px;
+    margin-bottom: 0px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+.logo > img {
+    width: 70px;
+    height: auto;
+    transform: translateX(67px) scale(4.5);
+    transform-origin: 40% 50%;
 }
 .left-bottom
 {
