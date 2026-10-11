@@ -4,12 +4,13 @@
     box-sizing: border-box;
 }
 
+
 .flex-col{
     display: flex;
     flex-direction: column;
 }
 .headings, .headings>span{
-    color:#8E5F56 ;
+    color:#814e43  ;
     font-family:serif;
     font-weight: 100;
 }
@@ -17,22 +18,30 @@
     color: #ae8a83;
    
 }
+.main-heading
+{
+    font-size: 52px;
+    width: 50%;
+}
 .main-container
 {   
     height: 100vh;
     display: flex;
 }
-input,label, span,a ,button{
+input,label, span,a ,button,p {
     font-family: monospace;
     color: #ae8a83;
+    font-weight: 300;
+     font-size: 16px;
+    
 }
 .left
 {   
     display: flex;
     flex: 1;
     justify-content: center;
-    align-items: center;
-    
+    /* align-items: center; */
+    padding: 60px 0px;
     background-color: #EADBD2;
 }
 .left-content{
@@ -40,10 +49,35 @@ input,label, span,a ,button{
     gap: 30px;
 
 }
+.left-content-up{
+    width: 68%;
+    gap: 20px;
+}
+.logo {
+
+    margin-bottom: 0px;
+    display: flex;
+
+    align-items: center;
+    justify-content: left;
+    overflow: hidden;
+    padding: 25px 60px ;
+    min-width: 100px;
+}
+.logo > img {
+    width: 20%;
+    min-width: 75px;
+
+    height: auto;
+    transform: scale(3);
+    transform-origin: 40% 50%;
+    padding: 0;
+}
 .handwritten-line{
       font-family: "Caveat", cursive;
+      font-style: italic;
+      
 }
-
 .ex-info
 {   display: flex;
 
@@ -54,7 +88,7 @@ input,label, span,a ,button{
 .ex-info > p{
     text-align: right;
     width: 25%;
-    transform: rotate(-20deg);
+    transform: rotate(-10deg);
 }
 
 .right
@@ -67,7 +101,7 @@ input,label, span,a ,button{
 }
 input{
     background-color: white;
-    padding: 8px;
+    padding: 10px;
     border: 0.1px solid #EADBD2 ;
     border-radius: 8px;
 }
@@ -98,11 +132,12 @@ input:focus{
     align-items: center;
 }
 .login-btn , .register-btn{
-    background-color:#8E5F56 ;
+    background-color:#814e43 ;
     border-radius: 20px;
     color: white;
-    padding: 8px 12px;
+    padding: 12px 12px;
     border: none;
+    font-size: 16px;
 }
 
 .login-btn:hover, .register-btn:hover{

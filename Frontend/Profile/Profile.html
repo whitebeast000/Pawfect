@@ -14,7 +14,7 @@
             
             <nav class="nav-section">
                 <div class="logo">
-                    <img src="../Images/pawcare-logo.svg" alt="">
+                    <img src="../Dashboard/Pawfect_Logo.png" alt="">
                 </div>
 
                 <div class="nav-list">
@@ -49,9 +49,54 @@
         
         <div class="right">
 
-            <main >
-                <h1>saddddd</h1>
+            <main class="main">
+            
+                <header class="topbar">
+                    <div>
+                    <h1 class="greeting">My profile</h1>
+                    <p class="greeting-sub">Manage your personal details</p>
+                    </div>
+                   
+                </header>
+                <div class="profile-container">
+                    <div class="profile-container-left flex-col">
+                         <div class="profile-img-container">
+                            <img src="../Images/nav_bottom.jfif" alt="">
+                        </div>
+                        <div class="profile-left-content flex-col">
+                            <h5>Saleha Khan</h5>
+                            <button id="profile-pic-changer" class="btn">Change photo</button>
+                        </div>
+                    </div>
+                    <div class="profile-container-right ">
+                            <form action="" id="user-profile" class="flex-col">
+                                <div class="profile-right-inputs">
+                                    <div class="flex-col">
+                                        <label for="full_name">Full name</label>
+                                        <input type="text" name="name" id="full_name" placeholder="Saleha khan">
+                                    </div>
+                                    <div class="flex-col">
+                                        <label for="email">Email</label>
+                                        <input type="email" name="email" id="full_name" placeholder="saleha@email.com">
+                                    </div>
+                                    <div class="flex-col">
+                                        <label for="ph_no">Phone</label>
+                                        <input type="tel" name="ph_no" id="ph_no" placeholder="+92 333 2190212">
+                                    </div>
+                                    <div class="flex-col">
+                                        <label for="city">City</label>
+                                        <input type="city" name="city" id="city" placeholder="Islamabad">
+                                    </div>
+                                </div>
+                                <div class="profile-form-buttons">
+                                    <button id="save-changes" class="btn">Save changes</button>
+                                    <button id="change-password" class="btn">Change password</button>
+                                </div>
+                            </form>
+                            
 
+                    </div>
+                </div>
             </main>
         </div>
 
