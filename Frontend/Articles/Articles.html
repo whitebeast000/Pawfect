@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Articles.css">
+    <link rel="stylesheet" href="../topheader.css">
     <link rel="stylesheet" href="../navbar.css">
+    <link rel="stylesheet" href="Articles.css">
+    <script src="Articles.js" defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <title>Dashboard</title>
+    <title>Articles</title>
 </head>
 <body>
     <div class="main-container">
@@ -14,7 +16,7 @@
             
             <nav class="nav-section">
                 <div class="logo">
-                    <img src="../Images/pawcare-logo.svg" alt="">
+                    <img src="../Dashboard/Pawfect_Logo.png" alt="">
                 </div>
 
                 <div class="nav-list">
@@ -49,8 +51,36 @@
         
         <div class="right">
 
-            <main >
-                <h1>saddddd</h1>
+            <main class="main" >
+               <header class="topbar">
+                        <div>
+                        <h1 class="greeting">Pet care guide</h1>
+                        <p class="greeting-sub">Advice from trusted vets.</p>
+                        </div>
+                        <!-- <a href="add-pet.html" class="btn btn-primary">+ Add Pet</a> -->
+                </header>
+
+                <ul class="Articles-list">
+                    <li id="all"  class="active">All</li>
+                    <li id="Dogs" >Dogs</li>
+                    <li id="Cats" > Cats</li>
+                    <li id="Rabbits">Rabbits</li>
+                    <li id="Birds"> Birds</li>
+                </ul>
+
+                <div class="articles-container" id="articles-container">
+
+                    <template id="article-template">
+                        <div class="article-card">
+                            <img src="" alt="" class="article-image">
+                            <span class="article-category"></span>
+                            <h3 class="article-title"></h3>
+                            <p class="article-description"></p>
+                            <a href="#" class="read-more">Read more -></a>
+                        </div>
+                    </template>
+                    
+                </div>
 
             </main>
         </div>

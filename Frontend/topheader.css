@@ -1,0 +1,109 @@
+/* Saleha's code */
+
+
+:root {        /* change to match your navbar width */
+
+  --bg: #fbf1ea;
+  --card: #fff8f4;
+  --brown: #8a5248;                /* primary */
+  --brown-dark: #6d3d35;
+  --brown-text: #5a3a34;
+  --muted: #8f7a74;
+  --blush: #ecd3cb;
+  --blush-soft: #f5e1da;
+  --border: #f0e0d8;
+  --green: #7e9c7b;
+  --green-soft: #dfead9;
+  --gold-soft: #f6e6c8;
+  --gold-text: #9a6b1c;
+  --red-soft: #f6d9d4;
+  --red-text: #b4574a;
+
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.main {
+  margin-left: var(--sidebar-width);
+  padding: 32px 44px 48px;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  color: var(--brown-text);
+  background:
+    radial-gradient(circle at 100% 0%, #f7e0d8 0%, transparent 40%),
+    var(--bg);
+}
+
+.main *,
+.main *::before,
+.main *::after {
+  box-sizing: border-box;
+}
+
+.main h1,
+.main h2,
+.main h3,
+.main p,
+.main ul {
+  margin: 0;
+  padding: 0;
+}
+
+.main ul { list-style: none; }
+
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-primary {
+  background: var(--brown);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(138, 82, 72, 0.25);
+}
+
+.btn-primary:hover {
+  background: var(--brown-dark);
+  transform: translateY(-1px);
+}
+
+.btn:focus-visible,
+.pet:focus-visible {
+  outline: 3px solid rgba(138, 82, 72, 0.4);
+  outline-offset: 3px;
+}
+
+/* ---------- Top bar ---------- */
+.topbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.greeting {
+  font-family: var(--font-display);
+  font-size: 44px;
+  font-weight: 500;
+  line-height: 1.1;
+  color: var(--brown-dark);
+}
+
+.greeting-sub {
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* Saleha's code */

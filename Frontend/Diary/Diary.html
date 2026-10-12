@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Diary.css">
     <link rel="stylesheet" href="../navbar.css">
+    <link rel="stylesheet" href="../topheader.css">
+    <link rel="stylesheet" href="Diary.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <script src="Diary.js" defer></script>
     <title>Dashboard</title>
 </head>
 <body>
@@ -14,7 +16,7 @@
             
             <nav class="nav-section">
                 <div class="logo">
-                    <img src="../Images/pawcare-logo.svg" alt="">
+                    <img src="../Dashboard/Pawfect_Logo.png" alt="">
                 </div>
 
                 <div class="nav-list">
@@ -49,11 +51,37 @@
         
         <div class="right">
 
-            <main >
-                <h1>saddddd</h1>
+            <main class="main" >
+               <header class="topbar">
+                        <div>
+                        <h1 class="greeting">Pet Diary</h1>
+                        <p class="greeting-sub">Advice from trusted vets.</p>
+                        </div>
+                        <a href="add-pet.html" class="btn btn-primary">+ New entry</a>
+                </header>
+
+
+                <div class="pet-diary-container" id="pet-diary-container">
+
+                    <template id="pet-diary-template">
+                        <div class="pet-diary-card">
+                            <img src="" alt="" class="pet-diary-image">
+                            <p class="pet-diary-date"></p>
+                            <h3 class="pet-diary-title"></h3>
+                            <p class="pet-diary-description"></p>
+                            <!-- <a href="#" class="read-more">Read more -></a> -->
+                            <span class="pet-diary-category"></span>
+                        </div>
+                    </template>
+                    
+                </div>
 
             </main>
         </div>
+
+    </div>
+</body>
+</html>
 
     </div>
 </body>

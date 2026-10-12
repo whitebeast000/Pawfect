@@ -1,0 +1,114 @@
+
+:root {        /* change to match your navbar width */
+
+  --bg: #fbf1ea;
+  --card: #fff8f4;
+  --brown: #8a5248;                /* primary */
+  --brown-dark: #6d3d35;
+  --brown-text: #5a3a34;
+  --muted: #8f7a74;
+  --blush: #ecd3cb;
+  --blush-soft: #f5e1da;
+  --border: #f0e0d8;
+  --green: #7e9c7b;
+  --green-soft: #dfead9;
+  --gold-soft: #f6e6c8;
+  --gold-text: #9a6b1c;
+  --red-soft: #f6d9d4;
+  --red-text: #b4574a;
+
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+
+.Articles-list{ 
+        display: flex;
+        color: var(--muted); 
+        gap: 10px;
+}
+
+.Articles-list > li{ 
+        border-radius: 20px; 
+        padding: 8px 20px;
+}
+.Articles-list > li:hover{
+    background-color:  #ac9692; 
+    color: white;
+
+}
+.Articles-list > .active{
+    background-color: #8f6b64;
+    color: white;
+
+}
+
+
+.pet-diary-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin: 20px 0px;
+}
+
+.pet-diary-card {
+    background-color: #fff9f4;
+    padding: 20px;
+    border: 1px solid #eadbd2;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.pet-diary-image {
+    width: 100%;
+    height: clamp(100px, 10vw, 195px);
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.pet-diary-category {
+    width: fit-content;
+    display: inline-block;
+    margin-top: 10px;
+    padding: 4px 10px;
+    background-color: #e5eee0;
+    border-radius: 20px;
+    font-size: 12px;
+    margin: 14px 0px;
+
+}
+
+.pet-diary-title {
+    font-size: 18px;
+    margin: 10px 0 !important;
+    color: #8a5248;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 14px 0px;
+}
+
+.pet-diary-description , .pet-diary-date{
+    color: #8a7770;
+    font-size: 14px;
+    margin: 10px 0px  !important;
+
+}
+/* 
+.read-more {
+    color: #91635b;
+    font-weight: bold;
+    text-decoration: none;
+} */
+
+@media (max-width: 900px) {
+    .articles-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .articles-container {
+        grid-template-columns: 1fr;
+    }
+}
