@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../navbar.css">
+    <link rel="stylesheet" href="../../topheader.css">
+    <link rel="stylesheet" href="Add_diary.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <script src="Diary.js" defer></script>
+    <title>Add Diary</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="left">
+            
+            <nav class="nav-section">
+                <div class="logo">
+                    <img src="../../Dashboard/Pawfect_Logo.png" alt="">
+                </div>
+
+                <div class="nav-list">
+                     <ul>
+                        <li class="nav-list-item "><i class="bi bi-house-fill"></i><a href="Dashboard.html">Dashboard</a></li>
+                        <li class="nav-list-item"><i class="bi bi-heart-fill"></i><a href="../MyPet/MyPet.html">MyPets</a></li>
+                        <li class="nav-list-item"><i class="bi bi-plus-lg"></i><a href="../Health/Health.html">Health</a></li>
+                        <li class="nav-list-item"><i class="bi bi-clock"></i><a href="../Appointments/Appointments.html">Appointments</a></li>
+                        <li class="nav-list-item"><i class="bi bi-check-lg"></i><a href="../DailyCare/DailyCare.html">Daily Care</a></li>
+                        <li class="nav-list-item"><i class="bi bi-dot"></i><a href="../Reminders/Reminders.html">Reminders</a></li>
+                        <li class="nav-list-item active"><i class="bi bi-journal-text"></i><a href="../Diary/Diary.html">Diary</a></li>
+                        <li class="nav-list-item"><i class="bi bi-list"></i><a href="../Articles/Articles.html">Articles</a></li>
+                        <li class="nav-list-item"><i class="bi bi-person-circle"></i><a href="../Profile/Profile.html">Profile</a></li>
+                    </ul>
+                </div>
+            </nav>
+            
+            <div>
+                <div class="left-bottom">
+                    <img src="../../Images/nav_bottom.jfif" alt="">
+                    <h3 >Need advice?</h3>
+                    <p >Read our per care guide</p>
+                </div>
+                <button class="logout-btn nav-list-item"><i class="bi bi-arrow-right"></i><span>Log out</span></button>
+            </div>
+        
+        </div>
+
+
+
+
+        
+        <div class="right">
+
+            <main class="main" >
+               <header class="topbar">
+                        <div>
+                        <h1 class="greeting">Pet Diary</h1>
+                        <p class="greeting-sub">Advice from trusted vets.</p>
+                        </div>
+                        <a href="add-pet.html" class="btn btn-primary">+ New entry</a>
+                </header>
+
+
+        <div class="add-diary-page">
+
+            <h1 class="add-diary-title">Add a diary entry</h1>
+            <p class="add-diary-subtitle">Tell us about your new family member.</p>
+
+            <form class="add-diary-card" action="#" method="post">
+
+                <div class="add-diary-photo">
+                <div class="add-diary-photo-frame">
+                
+                    <img src="../../Images/dogcat.jpeg" alt="Default pet avatar: a kitten and a puppy" />
+                </div>
+                <input class="add-diary-visually-hidden" type="file" id="add-diary-photo" name="photo" accept="image/*" />
+                <label class="add-diary-photo-link" for="add-diary-photo">Upload pet photo</label>
+                </div>
+
+                <div class="add-diary-form">
+                <div class="add-diary-grid">
+
+                    <div class="add-diary-field">
+                    <label class="add-diary-label" for="add-diary-title">Title</label>
+                    <input class="add-diary-input" type="text" id="diary-title" name="name" placeholder="Max Learned a new trick!" />
+                    </div><br>
+
+                    <div class="add-diary-field">
+                    <label class="add-diary-label" for="users-pet">pet</label>
+                    <select class="add-diary-select" id="add-diary-species" name="users-pet">
+                        <option selected>MAX</option>
+                        <option>OGGY</option>
+                        <option>Olivia</option>
+                        <option>Fluffy</option>
+                        <option>Other</option>
+                    </select>
+                    </div>
+
+
+                    <div class="add-diary-field">
+                    <label class="add-diary-label" for="add-diary-dob">Date of birth</label>
+                    <input class="add-diary-input" type="date" id="add-diary-dob" name="dob" value="2023-05-12" />
+                    </div>
+
+
+                    
+
+                    <div class="add-diary-field">
+                    <label class="add-diary-label" for="add-diary-mood">How was the day?</label>
+                    <select name="pet_mood" id="add-diary-mood">
+                        <option value="happy">Happy</option>
+                        <option value="excited">Excited</option>
+                        <option value="relaxed">Relaxed</option>
+                        <option value="playful">Playful</option>
+                        <option value="tired">Tired</option>
+                        <option value="unwell">Unwell</option>
+                    </select>
+                    </div>
+
+                </div>
+
+                <div class="add-diary-field add-diary-field-wide">
+                    <label class="add-diary-label" for="add-diary-desc">What Happened?</label>
+                   <textarea class="add-diary-input" id="add-diary-desc" rows="122" name="description">A very good boy who loves the park.</textarea>   </div>
+
+                <div class="add-diary-actions">
+                    <button class="add-diary-btn add-diary-btn-primary" type="submit">Save Diary</button>
+                    <a class="add-diary-btn add-diary-btn-ghost" href="#">Cancel</a>
+                </div>
+                </div>
+
+            </form>
+            </div>
+            </main>
+        </div>
+
+    </div>
+</body>
+</html>
+
+    </div>
+</body>
+</html>
