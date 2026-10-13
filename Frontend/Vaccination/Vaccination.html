@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Vaccination.css">
+    <link rel="stylesheet" href="../navbar.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="left">
+            
+            <nav class="nav-section">
+                <div class="logo">
+                    <img src="Pawfect_Logo.png" alt="">
+                </div>
+
+                <div class="nav-list">
+                       <ul>
+                        <li class="nav-list-item "><i class="bi bi-house-fill"></i><a href="Dashboard.html">Dashboard</a></li>
+                        <li class="nav-list-item"><i class="bi bi-heart-fill"></i><a href="../MyPet/MyPet.html">MyPets</a></li>
+                        <li class="nav-list-item"><i class="bi bi-plus-lg"></i><a href="../Health/Health.html">Health</a></li>
+                        <li class="nav-list-item"><i class="bi bi-clock"></i><a href="../Appointments/Appointments.html">Appointments</a></li>
+                        <li class="nav-list-item"><i class="bi bi-check-lg"></i><a href="../DailyCare/DailyCare.html">Daily Care</a></li>
+                        <li class="nav-list-item"><i class="bi bi-dot"></i><a href="../Reminders/Reminders.html">Reminders</a></li>
+                        <li class="nav-list-item"><i class="bi bi-journal-text"></i><a href="../Diary/Diary.html">Diary</a></li>
+                        <li class="nav-list-item"><i class="bi bi-list"></i><a href="../Articles/Articles.html">Articles</a></li>
+                        <li class="nav-list-item active"><i class="bi bi-person-circle"></i><a href="../Profile/Profile.html">Profile</a></li>
+                    </ul>
+                </div>
+            </nav>
+            
+            <div>
+                <div class="left-bottom">
+                    <img src="../Images/nav_bottom.jfif" alt="">
+                    <h3 >Need advice?</h3>
+                    <p >Read our per care guide</p>
+                </div>
+                <button class="logout-btn nav-list-item"><i class="bi bi-arrow-right"></i><span>Log out</span></button>
+            </div>
+        
+        </div>
+        <div class="right">
+
+          
+                <!-- Put these in <head> (once) -->
+<!--
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="main-section.css">
+-->
+
+<!-- Put this inside your <div class="right"> -->
+<main class="main" id="mainContent">
+
+  <header class="page-header" id="pageHeader">
+    <div class="page-heading">
+      <h1 class="page-title" id="pageTitle">Vaccination records</h1>
+      <p class="page-subtitle" id="pageSubtitle">Keep every shot up to date.</p>
+    </div>
+    <button type="button" class="btn-add" id="addVaccinationBtn">+ Add vaccination</button>
+  </header>
+
+  <section class="vax-card" id="vaccinationCard">
+
+    <!-- Pet tabs (render from API: one button per pet) -->
+    <div class="pet-tabs" id="petTabs" role="tablist">
+      <button type="button" class="pet-tab active" id="petTab-1" data-pet-id="1" role="tab" aria-selected="true">Max</button>
+      <button type="button" class="pet-tab" id="petTab-2" data-pet-id="2" role="tab" aria-selected="false">Luna</button>
+      <button type="button" class="pet-tab" id="petTab-3" data-pet-id="3" role="tab" aria-selected="false">Coco</button>
+    </div>
+
+    <table class="vax-table" id="vaccinationTable">
+      <thead>
+        <tr id="vaccinationTableHeadRow">
+          <th id="thVaccine">Vaccine</th>
+          <th id="thGiven">Given</th>
+          <th id="thNextDue">Next due</th>
+          <th id="thStatus">Status</th>
+        </tr>
+      </thead>
+
+      <!-- Rows from API: ids use the vaccination id -->
+      <tbody id="vaccinationTableBody">
+        <tr id="vaccinationRow-1" data-vaccination-id="1">
+          <td class="vax-name" id="vaccineName-1">Rabies</td>
+          <td id="givenDate-1">12/10/25</td>
+          <td id="nextDueDate-1">12/10/26</td>
+          <td><span class="badge badge-due-soon" id="vaccineStatus-1">Due soon</span></td>
+        </tr>
+        <tr id="vaccinationRow-2" data-vaccination-id="2">
+          <td class="vax-name" id="vaccineName-2">Distemper</td>
+          <td id="givenDate-2">15/11/24</td>
+          <td id="nextDueDate-2">15/11/25</td>
+          <td><span class="badge badge-overdue" id="vaccineStatus-2">Overdue</span></td>
+        </tr>
+        <tr id="vaccinationRow-3" data-vaccination-id="3">
+          <td class="vax-name" id="vaccineName-3">Parvovirus</td>
+          <td id="givenDate-3">20/12/25</td>
+          <td id="nextDueDate-3">20/12/26</td>
+          <td><span class="badge badge-up-to-date" id="vaccineStatus-3">Up to date</span></td>
+        </tr>
+        <tr id="vaccinationRow-4" data-vaccination-id="4">
+          <td class="vax-name" id="vaccineName-4">Bordetella</td>
+          <td id="givenDate-4">02/03/26</td>
+          <td id="nextDueDate-4">02/03/27</td>
+          <td><span class="badge badge-up-to-date" id="vaccineStatus-4">Up to date</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </section>
+</main>
+
+        </div>
+
+    </div>
+</body>
+</html>
