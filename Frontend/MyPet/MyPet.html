@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="MyPet.css">
     <link rel="stylesheet" href="../navbar.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <title>Dashboard</title>
+    <title>My Pets</title>
 </head>
 <body>
     <div class="main-container">
@@ -47,14 +48,52 @@
 
 
         
-        <div class="right">
+       <div class="right">
+    <main>
+        <div class="mypets-page">
 
-            <main >
-                <h1>saddddd</h1>
+            <header class="mypets-head">
+                <div>
+                    <h1 class="mypets-title">My Pets</h1>
+                    <p class="mypets-subtitle">
+                        Everyone you care for, in one place.
+                    </p>
+                </div>
 
-            </main>
+                <a class="mypets-add" href="#">
+                    + Add Pet
+                </a>
+            </header>
+
+            <div class="pets-container" id="pets-container">
+            </div>
+
+            <template id="pet-template">
+                <article class="pet-card">
+                    <img src="" alt="" class="pet-image">
+
+                    <div class="pet-info">
+                        <div>
+                            <h3 class="pet-name"></h3>
+                            <p class="pet-breed"></p>
+                        </div>
+
+                        <span class="pet-status"></span>
+                    </div>
+
+                    <p class="pet-details"></p>
+
+                    <a href="#" class="view-profile">
+                        View profile
+                    </a>
+                </article>
+            </template>
+
         </div>
+    </main>
+</div>
 
     </div>
+    <script src="MyPet.js"></script>
 </body>
 </html>
