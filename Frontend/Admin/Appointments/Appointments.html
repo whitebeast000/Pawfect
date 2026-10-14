@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../admin.css">
+  <title>Appointments | PawCare Admin</title>
+</head>
+<body data-page="appointments">
+  <div class="admin-shell">
+    <aside class="sidebar" id="sidebar"></aside>
+
+    <main class="main">
+      <header class="page-header">
+        <div>
+          <h1>Appointments</h1>
+          <p>Every vet visit booked on PawCare.</p>
+        </div>
+      </header>
+
+      <section class="card">
+        <div class="toolbar">
+          <input type="text" id="searchInput" class="input search" placeholder="Search by pet, owner or vet">
+          <select id="statusFilter" class="input">
+            <option value="all">All statuses</option>
+            <option value="upcoming">Upcoming</option>
+            <option value="completed">Completed</option>
+            <option value="cancelled">Cancelled</option>
+          </select>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Pet</th><th>Vet</th><th>Date &amp; time</th><th>Reason</th><th>Status</th></tr>
+            </thead>
+            <tbody id="appointmentsBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="../admin-data.js"></script>
+  <script src="../admin-common.js"></script>
+  <script src="Appointments.js"></script>
+</body>
+</html>

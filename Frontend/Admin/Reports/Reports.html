@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../admin.css">
+  <title>Reports | PawCare Admin</title>
+</head>
+<body data-page="reports">
+  <div class="admin-shell">
+    <aside class="sidebar" id="sidebar"></aside>
+
+    <main class="main">
+      <header class="page-header">
+        <div>
+          <h1>Reports</h1>
+          <p>A quick look at how PawCare is being used.</p>
+        </div>
+      </header>
+
+      <section class="grid-2">
+        <div class="card"><h2>Pets by species</h2><div id="speciesBars"></div></div>
+        <div class="card"><h2>Appointments by status</h2><div id="appointmentBars"></div></div>
+        <div class="card"><h2>Vaccination status</h2><div id="vaccineBars"></div></div>
+        <div class="card"><h2>Articles by category</h2><div id="articleBars"></div></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="../admin-data.js"></script>
+  <script src="../admin-common.js"></script>
+  <script src="Reports.js"></script>
+</body>
+</html>

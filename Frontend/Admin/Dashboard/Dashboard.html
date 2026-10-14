@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../admin.css">
+  <title>Admin Dashboard | PawCare</title>
+</head>
+<body data-page="dashboard">
+  <div class="admin-shell">
+    <aside class="sidebar" id="sidebar"></aside>
+
+    <main class="main">
+      <header class="page-header">
+        <div>
+          <h1>Admin dashboard</h1>
+          <p>Overview of PawCare.</p>
+        </div>
+      </header>
+
+      <section class="stats" id="statsRow"></section>
+
+      <section class="grid-2">
+        <div class="card">
+          <h2>Recent activity</h2>
+          <div id="activityList"></div>
+        </div>
+
+        <div class="card">
+          <h2>Latest users</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Name</th><th>Pets</th><th>Role</th></tr></thead>
+              <tbody id="latestUsersBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="../admin-data.js"></script>
+  <script src="../admin-common.js"></script>
+  <script src="Dashboard.js"></script>
+</body>
+</html>

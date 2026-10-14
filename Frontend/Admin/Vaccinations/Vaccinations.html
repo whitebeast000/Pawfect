@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../admin.css">
+  <title>Vaccinations | PawCare Admin</title>
+</head>
+<body data-page="vaccinations">
+  <div class="admin-shell">
+    <aside class="sidebar" id="sidebar"></aside>
+
+    <main class="main">
+      <header class="page-header">
+        <div>
+          <h1>Vaccinations</h1>
+          <p>Keep an eye on every pet's shots.</p>
+        </div>
+      </header>
+
+      <section class="card">
+        <div class="toolbar">
+          <input type="text" id="searchInput" class="input search" placeholder="Search by pet or vaccine">
+          <select id="statusFilter" class="input">
+            <option value="all">All statuses</option>
+            <option value="Overdue">Overdue</option>
+            <option value="Due soon">Due soon</option>
+            <option value="Up to date">Up to date</option>
+          </select>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Pet</th><th>Vaccine</th><th>Given</th><th>Next due</th><th>Status</th><th></th></tr>
+            </thead>
+            <tbody id="vaccinationsBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="../admin-data.js"></script>
+  <script src="../admin-common.js"></script>
+  <script src="Vaccinations.js"></script>
+</body>
+</html>

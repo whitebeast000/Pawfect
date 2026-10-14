@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../admin.css">
+  <title>Articles | PawCare Admin</title>
+</head>
+<body data-page="articles">
+  <div class="admin-shell">
+    <aside class="sidebar" id="sidebar"></aside>
+
+    <main class="main">
+      <header class="page-header">
+        <div>
+          <h1>Articles</h1>
+          <p>Write and manage the pet care guide.</p>
+        </div>
+        <button class="btn" id="newArticleBtn">+ New article</button>
+      </header>
+
+      <section class="card">
+        <div class="toolbar">
+          <input type="text" id="searchInput" class="input search" placeholder="Search by title or author">
+          <select id="statusFilter" class="input">
+            <option value="all">All statuses</option>
+            <option value="published">Published</option>
+            <option value="draft">Drafts</option>
+          </select>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Title</th><th>Category</th><th>Author</th><th>Published</th><th>Status</th><th></th></tr>
+            </thead>
+            <tbody id="articlesBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Add / edit popup -->
+  <div class="modal-backdrop" id="articleModal">
+    <div class="modal">
+      <h2 id="modalTitle">New article</h2>
+
+      <div class="form-group">
+        <label for="titleInput">Title</label>
+        <input type="text" id="titleInput" class="input">
+      </div>
+      <div class="form-group">
+        <label for="categoryInput">Category</label>
+        <select id="categoryInput" class="input">
+          <option>All</option>
+          <option>Dogs</option>
+          <option>Cats</option>
+          <option>Rabbits</option>
+          <option>Birds</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="summaryInput">Short summary</label>
+        <textarea id="summaryInput" class="input"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="statusInput">Status</label>
+        <select id="statusInput" class="input">
+          <option value="draft">Draft</option>
+          <option value="published">Published</option>
+        </select>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn" id="saveArticleBtn">Save article</button>
+        <button class="btn btn-outline" id="cancelArticleBtn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../admin-data.js"></script>
+  <script src="../admin-common.js"></script>
+  <script src="Articles.js"></script>
+</body>
+</html>

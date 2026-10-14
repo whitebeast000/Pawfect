@@ -1,0 +1,228 @@
+/* =========================================================
+   admin.css  -  shared styles for every admin page
+   Same palette + fonts as the user side of Pawfect.
+   ========================================================= */
+
+:root {
+  --bg: #f9ece5;
+  --card: #fff8f3;
+  --brown: #8b5a50;
+  --brown-dark: #6b4039;
+  --sidebar: #4f332d;
+  --text: #4a2f2a;
+  --muted: #9a7a72;
+  --line: #efdcd3;
+  --blush: #e8cfc5;
+
+  --green-bg: #e0eee3;  --green: #5f8a64;
+  --amber-bg: #f6e6c8;  --amber: #9c7428;
+  --red-bg:   #f4d6d3;  --red:   #b5524a;
+  --grey-bg:  #ece3df;  --grey:  #7d665f;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Inter", Arial, sans-serif;
+  color: var(--text);
+  background: linear-gradient(135deg, #fbf1eb, #f6e6de);
+  min-height: 100vh;
+}
+
+/* ---------- Layout ---------- */
+.admin-shell {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  min-height: 100vh;
+}
+
+.main { padding: 38px 44px; }
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 26px;
+}
+
+.page-header h1 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--brown-dark);
+}
+
+.page-header p { color: var(--muted); font-size: 14px; margin-top: 6px; }
+
+/* ---------- Sidebar ---------- */
+.sidebar {
+  background: var(--sidebar);
+  padding: 30px 18px;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.brand {
+
+  margin: 20px 0px 40px;
+}
+.brand img {
+  width: 100%;
+  max-width: 170px;
+  height: auto;
+  display: block;
+}
+
+.nav { display: flex; flex-direction: column; gap: 6px; flex: 1; }
+
+.nav a, .logout {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  color: #ecd3c8;
+  text-decoration: none;
+  font-size: 14px; font-weight: 500;
+  transition: background 0.2s;
+}
+
+.nav a i, .logout i {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  display: grid; place-items: center;
+  font-size: 13px;
+}
+
+.nav a:hover, .logout:hover { background: rgba(255, 255, 255, 0.08); }
+.nav a.active { background: #f6e3da; color: var(--brown-dark); }
+.nav a.active i { background: var(--blush); }
+
+/* ---------- Cards ---------- */
+.card {
+  background: var(--card);
+  border: 1px solid #f3e2d9;
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 8px 30px rgba(139, 85, 80, 0.08);
+}
+
+.card h2 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 22px; font-weight: 600;
+  color: var(--brown-dark);
+  margin-bottom: 16px;
+}
+
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 22px; }
+.stat { display: flex; align-items: center; gap: 16px; padding: 20px 24px; }
+
+.stat-icon {
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  background: var(--brown); color: #fff;
+  display: grid; place-items: center;
+  font-size: 18px;
+}
+
+.stat-number { font-family: "Cormorant Garamond", Georgia, serif; font-size: 34px; font-weight: 600; line-height: 1; }
+.stat-label { font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  border: none;
+  border-radius: 999px;
+  padding: 12px 26px;
+  background: var(--brown); color: #fff;
+  font: inherit; font-size: 14px; font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn:hover { background: var(--brown-dark); }
+
+.btn-outline { background: transparent; border: 1px solid var(--brown); color: var(--brown); }
+.btn-outline:hover { background: var(--blush); }
+.btn-danger { background: transparent; border: 1px solid #e3b4ae; color: var(--red); }
+.btn-danger:hover { background: var(--red-bg); }
+.btn-small { padding: 6px 15px; font-size: 13px; }
+
+/* ---------- Toolbar + form fields ---------- */
+.toolbar { display: flex; gap: 12px; margin-bottom: 18px; flex-wrap: wrap; }
+.toolbar .search { flex: 1; min-width: 220px; }
+
+.input {
+  padding: 12px 16px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fff;
+  font: inherit; font-size: 14px;
+  color: var(--text);
+}
+.input:focus { outline: 2px solid var(--blush); border-color: var(--brown); }
+
+.form-group { margin-bottom: 16px; }
+.form-group label { display: block; font-size: 12px; font-weight: 600; color: var(--brown); margin-bottom: 6px; }
+.form-group .input { width: 100%; }
+textarea.input { resize: vertical; min-height: 90px; }
+
+/* ---------- Tables ---------- */
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+
+th {
+  text-align: left;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--muted);
+  padding: 0 10px 12px;
+}
+
+td { padding: 14px 10px; border-top: 1px solid var(--line); font-size: 14px; vertical-align: middle; }
+.cell-main { font-weight: 600; }
+.cell-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.row-actions { display: flex; gap: 8px; justify-content: flex-end; }
+.empty { text-align: center; color: var(--muted); padding: 30px 0; }
+
+/* ---------- Badges ---------- */
+.badge { display: inline-block; padding: 4px 12px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+.badge-green { background: var(--green-bg); color: var(--green); }
+.badge-amber { background: var(--amber-bg); color: var(--amber); }
+.badge-red   { background: var(--red-bg);   color: var(--red); }
+.badge-grey  { background: var(--grey-bg);  color: var(--grey); }
+
+/* ---------- Simple lists (dashboard activity) ---------- */
+.list-item { display: flex; align-items: center; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.list-item:last-child { border-bottom: none; }
+.list-icon { width: 40px; height: 40px; border-radius: 50%; background: var(--blush); color: var(--brown-dark); display: grid; place-items: center; }
+
+/* ---------- Report bars ---------- */
+.bar-row { display: grid; grid-template-columns: 110px 1fr 30px; align-items: center; gap: 12px; margin-bottom: 14px; font-size: 14px; }
+.bar-track { height: 10px; background: var(--line); border-radius: 999px; overflow: hidden; }
+.bar-fill { height: 100%; background: var(--brown); border-radius: 999px; }
+.bar-count { text-align: right; color: var(--muted); }
+
+/* ---------- Modal ---------- */
+.modal-backdrop {
+  position: fixed; inset: 0;
+  background: rgba(60, 35, 30, 0.45);
+  display: none;
+  align-items: center; justify-content: center;
+  z-index: 50;
+}
+.modal-backdrop.open { display: flex; }
+.modal { width: 100%; max-width: 520px; background: var(--card); border-radius: 24px; padding: 28px; }
+.modal-actions { display: flex; gap: 10px; margin-top: 8px; }
+
+/* ---------- Small screens ---------- */
+@media (max-width: 900px) {
+  .admin-shell { grid-template-columns: 1fr; }
+  .sidebar { position: static; height: auto; }
+  .nav { flex-direction: row; flex-wrap: wrap; }
+  .main { padding: 24px 18px; }
+  .stats, .grid-2 { grid-template-columns: 1fr; }
+}
