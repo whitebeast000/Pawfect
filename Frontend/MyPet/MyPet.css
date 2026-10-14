@@ -1,0 +1,183 @@
+.mypets-page {
+    --mp-brown: #8b5a52;
+    --mp-brown-dark: #6b4540;
+    --mp-muted: #8c706a;
+    --mp-card: #fff8f3;
+    --mp-border: #f0ddd2;
+
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    padding: 30px 45px 44px;
+    box-sizing: border-box;
+    min-height: 100vh;
+}
+
+.mypets-page *,
+.mypets-page *::before,
+.mypets-page *::after {
+    box-sizing: border-box;
+}
+
+.mypets-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.mypets-title {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 1.1;
+    color: var(--mp-brown-dark);
+    margin: 0;
+}
+
+.mypets-subtitle {
+    margin: 6px 0 0;
+    font-size: 14px;
+    color: var(--mp-muted);
+}
+
+.mypets-add {
+    margin-top: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 41px;
+    padding: 0 24px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    background: var(--mp-brown);
+    border: 1px solid var(--mp-brown);
+    border-radius: 999px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+.mypets-add:hover {
+    background: var(--mp-brown-dark);
+    box-shadow: 0 6px 14px rgba(139, 90, 82, 0.28);
+}
+
+.pets-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 21px;
+    margin: 20px 0;
+}
+
+.pet-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 24px;
+    background-color: var(--mp-card);
+    border: 1px solid var(--mp-border);
+    border-radius: 24px;
+    box-shadow: 0 8px 30px rgba(139, 90, 82, 0.06);
+}
+
+.pet-card .pet-image {
+    display: block;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.pet-card .pet-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 14px;
+}
+
+.pet-card .pet-name {
+    margin: 0;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    color: var(--mp-brown-dark);
+}
+
+.pet-card .pet-breed {
+    margin: 2px 0 0;
+    font-size: 12px;
+    line-height: 1.4;
+    color: var(--mp-muted);
+}
+
+.pet-card .pet-status {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 28px;
+    padding: 0 14px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #5c7957;
+    background-color: #e4ede1;
+    border-radius: 999px;
+}
+
+.pet-card .pet-details {
+    margin: 10px 0 0;
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--mp-muted);
+}
+
+.pet-card .view-profile {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    min-height: 37px;
+    margin-top: 17px;
+    padding: 0 22px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--mp-brown-dark);
+    text-decoration: none;
+    border: 1px solid var(--mp-brown);
+    border-radius: 999px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.pet-card .view-profile:hover {
+    background: var(--mp-brown);
+    color: #fff;
+}
+
+@media (max-width: 1100px) {
+    .pets-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 900px) {
+    .mypets-page {
+        padding: 24px 20px 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .mypets-head {
+        flex-direction: column;
+    }
+
+    .mypets-title {
+        font-size: 34px;
+    }
+
+    .pets-container {
+        grid-template-columns: 1fr;
+    }
+}
