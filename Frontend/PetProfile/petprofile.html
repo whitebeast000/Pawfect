@@ -1,0 +1,448 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="petprofile.css">
+    <link rel="stylesheet" href="../navbar.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <title>Pet Profile - PawCare</title>
+</head>
+
+<body>
+    <div class="main-container">
+
+        <div class="left">
+            <nav class="nav-section">
+
+                <div class="logo">
+                    <img src="Pawfect_Logo.png" alt="PawCare Logo">
+                </div>
+
+                <div class="nav-list">
+                    <ul>
+                        <li class="nav-list-item">
+                            <i class="bi bi-house-fill"></i>
+                            <a href="../Dashboard/Dashboard.html">Dashboard</a>
+                        </li>
+
+                        <li class="nav-list-item">
+                            <i class="bi bi-heart-fill"></i>
+                            <a href="../MyPet/MyPet.html">MyPets</a>
+                        </li>
+
+                        <li class="nav-list-item active">
+                            <i class="bi bi-person-vcard"></i>
+                            <a href="../PetProfile/petprofile.html">Pet Profile</a>
+                        </li>
+
+                        <li class="nav-list-item">
+                            <i class="bi bi-plus-lg"></i>
+                            <a href="../Health/Health.html">Health</a>
+                        </li>
+
+                        <li class="nav-list-item">
+                            <i class="bi bi-clock"></i>
+                            <a href="../Appointments/Appointments.html">Appointments</a>
+                        </li>
+
+                        <li class="nav-list-item">
+                            <i class="bi bi-check-lg"></i>
+                            <a href="../DailyCare/DailyCare.html">Daily Care</a>
+                        </li>
+
+                        <li class="nav-list-item">
+                            <i class="bi bi-dot"></i>
+                            <a href="../Reminders/Reminders.html">Reminders</a>
+                        </li>
+
+                        <li class="nav-list-item">
+                            <i class="bi bi-journal-text"></i>
+                            <a href="../Diary/Diary.html">Diary</a>
+                        </li>
+
+                        <li class="nav-list-item">
+                            <i class="bi bi-list"></i>
+                            <a href="../Articles/Articles.html">Articles</a>
+                        </li>
+
+                        <li class="nav-list-item">
+                            <i class="bi bi-person-circle"></i>
+                            <a href="../Profile/Profile.html">Profile</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div>
+                <div class="left-bottom">
+                    <img src="../Images/nav_bottom.jfif" alt="Pet care">
+                    <h3>Need advice?</h3>
+                    <p>Read our pet care guide</p>
+                </div>
+
+                <button class="logout-btn nav-list-item">
+                    <i class="bi bi-arrow-right"></i>
+                    <span>Log out</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="right">
+            <main>
+                <div class="petprofile-page">
+
+                    <header class="petprofile-head">
+                        <div>
+                            <h1 class="petprofile-title" id="profile-title">Max</h1>
+                            <p class="petprofile-subtitle" id="profile-subtitle">
+                                Golden Retriever · Male
+                            </p>
+                        </div>
+
+                        <a class="petprofile-edit" href="#">Edit</a>
+                    </header>
+
+                    <section class="petprofile-card petprofile-hero">
+
+                        <div class="petprofile-avatar">
+                            <img
+                                src="../Images/avatar.jpg"
+                                alt="Max"
+                                id="profile-avatar"
+                            >
+                        </div>
+
+                        <div>
+                            <h2 class="petprofile-name" id="profile-name">Max</h2>
+
+                            <p class="petprofile-meta" id="profile-meta">
+                                3 years · 24 kg · Golden
+                            </p>
+
+                            <span class="petprofile-badge" id="profile-status">
+                                Healthy
+                            </span>
+                        </div>
+
+                        <p class="petprofile-quote">
+                            Good pet, always ♡
+                        </p>
+                    </section>
+
+                    <nav class="petprofile-tabs" aria-label="Pet sections">
+                        <a class="petprofile-tab is-active" href="#">Overview</a>
+                        <a class="petprofile-tab" href="#">Health</a>
+                        <a class="petprofile-tab" href="#">Care</a>
+                        <a class="petprofile-tab" href="#">History</a>
+                    </nav>
+
+                    <section class="petprofile-stats">
+
+                        <div class="petprofile-card petprofile-stat">
+                            <span class="petprofile-icon is-dark" aria-hidden="true">♥</span>
+
+                            <div>
+                                <div class="petprofile-stat-value is-big" id="stat-health">Good</div>
+                                <div class="petprofile-stat-label">Health status</div>
+                            </div>
+                        </div>
+
+                        <div class="petprofile-card petprofile-stat">
+                            <span class="petprofile-icon" aria-hidden="true">⚖</span>
+
+                            <div>
+                                <div class="petprofile-stat-value is-big" id="stat-weight">24 kg</div>
+                                <div class="petprofile-stat-label">Weight</div>
+                            </div>
+                        </div>
+
+                        <div class="petprofile-card petprofile-stat">
+                            <span class="petprofile-icon is-dark" aria-hidden="true">✚</span>
+
+                            <div>
+                                <div class="petprofile-stat-value" id="stat-vaccinations">4</div>
+                                <div class="petprofile-stat-label">Vaccinations</div>
+                            </div>
+                        </div>
+
+                        <div class="petprofile-card petprofile-stat">
+                            <span class="petprofile-icon" aria-hidden="true">◷</span>
+
+                            <div>
+                                <div class="petprofile-stat-value" id="stat-visits">3</div>
+                                <div class="petprofile-stat-label">Vet visits</div>
+                            </div>
+                        </div>
+
+                    </section>
+
+                    <section class="petprofile-bottom">
+
+                        <div class="petprofile-card petprofile-panel" id="activity-panel">
+                            <h3 class="petprofile-panel-title">Recent activity</h3>
+
+                            <ul class="petprofile-list" id="activity-list">
+                            </ul>
+                        </div>
+
+                        <div class="petprofile-card petprofile-panel" id="weight-chart-panel">
+                            <h3 class="petprofile-panel-title">Weight (kg)</h3>
+
+                            <svg
+                                class="petprofile-chart"
+                                viewBox="0 0 490 190"
+                                role="img"
+                                aria-label="Illustrative weight trend for the selected pet"
+                            >
+                                <polyline
+                                    id="weight-line"
+                                    points="13,126 135,95 258,64 380,40 478,22"
+                                    fill="none"
+                                    stroke="#8b5a52"
+                                    stroke-width="3"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+
+                                <g id="weight-dots" fill="#8b5a52">
+                                    <circle cx="13" cy="126" r="6"/>
+                                    <circle cx="135" cy="95" r="6"/>
+                                    <circle cx="258" cy="64" r="6"/>
+                                    <circle cx="380" cy="40" r="6"/>
+                                    <circle cx="478" cy="22" r="6"/>
+                                </g>
+                            </svg>
+                        </div>
+
+                    </section>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        // Pet data for the PawCare profile page.
+        // Bella's and Luna's additional statistics and histories
+        // are illustrative demo values and should be replaced
+        // with their actual records when available.
+
+        const petData = {
+            bella: {
+                name: "Bella",
+                breed: "Golden Retriever",
+                age: "2 years",
+                weight: "24 kg",
+                color: "Golden",
+                gender: "",
+                status: "Healthy",
+                health: "Good",
+                vaccinations: "4",
+                vetVisits: "3",
+
+                activity: [
+                    {
+                        icon: "✚",
+                        title: "Vaccination check",
+                        date: "10 Oct 2026"
+                    },
+                    {
+                        icon: "◷",
+                        title: "Regular checkup",
+                        date: "20 Sep 2026"
+                    },
+                    {
+                        icon: "✎",
+                        title: "Daily care completed",
+                        date: "12 Oct 2026"
+                    }
+                ],
+
+                weightPoints: [
+                    [13, 126],
+                    [135, 110],
+                    [258, 82],
+                    [380, 55],
+                    [478, 35]
+                ]
+            },
+
+            luna: {
+                name: "Luna",
+                breed: "Persian Cat",
+                age: "1 year",
+                weight: "4 kg",
+                color: "",
+                gender: "",
+                status: "Healthy",
+                health: "Good",
+                vaccinations: "3",
+                vetVisits: "2",
+
+                activity: [
+                    {
+                        icon: "✚",
+                        title: "Vaccination check",
+                        date: "8 Oct 2026"
+                    },
+                    {
+                        icon: "◷",
+                        title: "Regular checkup",
+                        date: "15 Sep 2026"
+                    },
+                    {
+                        icon: "✎",
+                        title: "Daily care completed",
+                        date: "11 Oct 2026"
+                    }
+                ],
+
+                weightPoints: [
+                    [13, 126],
+                    [135, 105],
+                    [258, 85],
+                    [380, 60],
+                    [478, 45]
+                ]
+            },
+
+            max: {
+                name: "Max",
+                breed: "Golden Retriever",
+                age: "3 years",
+                weight: "24 kg",
+                color: "Golden",
+                gender: "Male",
+                status: "Healthy",
+                health: "Good",
+                vaccinations: "4",
+                vetVisits: "3",
+
+                activity: [
+                    {
+                        icon: "✚",
+                        title: "Rabies vaccine",
+                        date: "12 Oct 2025"
+                    },
+                    {
+                        icon: "◷",
+                        title: "Regular checkup",
+                        date: "3 Sep 2026"
+                    },
+                    {
+                        icon: "✎",
+                        title: "Learned a new trick",
+                        date: "4 Oct 2026"
+                    }
+                ],
+
+                weightPoints: [
+                    [13, 126],
+                    [135, 95],
+                    [258, 64],
+                    [380, 40],
+                    [478, 22]
+                ]
+            }
+        };
+
+        // Read the selected pet from the URL.
+        const params = new URLSearchParams(window.location.search);
+        const selectedPet = (params.get("pet") || "Max").toLowerCase();
+
+        // Default to Max if the URL contains an unknown pet name.
+        const pet = petData[selectedPet] || petData.max;
+
+        // Update the profile heading and name.
+        document.getElementById("profile-title").textContent = pet.name;
+        document.getElementById("profile-name").textContent = pet.name;
+
+        // Update breed and gender when available.
+        document.getElementById("profile-subtitle").textContent =
+            pet.gender ? `${pet.breed} · ${pet.gender}` : pet.breed;
+
+        // Update age, weight, and color.
+        const meta = [pet.age, pet.weight, pet.color]
+            .filter(Boolean)
+            .join(" · ");
+
+        document.getElementById("profile-meta").textContent = meta;
+        document.getElementById("profile-avatar").alt = pet.name;
+
+        // Update the browser tab title.
+        document.title = `${pet.name}'s Profile - PawCare`;
+
+        // Update all four overview statistics.
+        document.getElementById("profile-status").textContent = pet.status;
+        document.getElementById("stat-health").textContent = pet.health;
+        document.getElementById("stat-weight").textContent = pet.weight;
+
+        document.getElementById("stat-vaccinations").textContent =
+            pet.vaccinations;
+
+        document.getElementById("stat-visits").textContent =
+            pet.vetVisits;
+
+        // Render the selected pet's recent activity.
+        const activityList = document.getElementById("activity-list");
+
+        pet.activity.forEach((item) => {
+            const li = document.createElement("li");
+            li.className = "petprofile-item";
+
+            const icon = document.createElement("span");
+            icon.className = "petprofile-icon";
+            icon.setAttribute("aria-hidden", "true");
+            icon.textContent = item.icon;
+
+            const details = document.createElement("div");
+
+            const title = document.createElement("p");
+            title.className = "petprofile-item-title";
+            title.textContent = item.title;
+
+            const date = document.createElement("p");
+            date.className = "petprofile-item-date";
+            date.textContent = item.date;
+
+            details.appendChild(title);
+            details.appendChild(date);
+
+            li.appendChild(icon);
+            li.appendChild(details);
+
+            activityList.appendChild(li);
+        });
+
+        // Update the weight chart for the selected pet.
+        const pointString = pet.weightPoints
+            .map((point) => point.join(","))
+            .join(" ");
+
+        document.getElementById("weight-line")
+            .setAttribute("points", pointString);
+
+        const dots = document.getElementById("weight-dots");
+        dots.innerHTML = "";
+
+        pet.weightPoints.forEach(([cx, cy]) => {
+            const circle = document.createElementNS(
+                "http://www.w3.org/2000/svg",
+                "circle"
+            );
+
+            circle.setAttribute("cx", cx);
+            circle.setAttribute("cy", cy);
+            circle.setAttribute("r", "6");
+
+            dots.appendChild(circle);
+        });
+    </script>
+
+</body>
+</html>
