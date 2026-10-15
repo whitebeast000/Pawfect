@@ -30,16 +30,18 @@ function renderArticles() {
 
   articlesBody.innerHTML = articles.map(article => {
     const isPublished = article.status === "published";
-    return `
+        return `
       <tr>
         <td>
-          <div class="cell-main">${escapeHtml(article.title)}</div>
-          <div class="cell-sub">${escapeHtml(article.summary)}</div>
+          <div>
+            <div class="cell-main">${escapeHtml(article.title)}</div>
+            <div class="cell-sub">${escapeHtml(article.summary)}</div>
+          </div>
         </td>
-        <td>${article.category}</td>
-        <td>${escapeHtml(article.author)}</td>
-        <td>${formatDate(article.published_on)}</td>
-        <td>${statusBadge(isPublished ? "Published" : "Draft", isPublished ? "green" : "grey")}</td>
+        <td data-label="Category">${article.category}</td>
+        <td data-label="Author">${escapeHtml(article.author)}</td>
+        <td data-label="Published">${formatDate(article.published_on)}</td>
+        <td data-label="Status">${statusBadge(isPublished ? "Published" : "Draft", isPublished ? "green" : "grey")}</td>
         <td><div class="row-actions">
           <button class="btn btn-outline btn-small" data-action="edit" data-id="${article.id}">Edit</button>
           <button class="btn btn-outline btn-small" data-action="publish" data-id="${article.id}">${isPublished ? "Unpublish" : "Publish"}</button>

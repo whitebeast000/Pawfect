@@ -87,4 +87,41 @@ function confirmAction(message) {
   return window.confirm(message);
 }
 
+/* ---------- hamburger menu for small screens ---------- */
+
+function setupMobileMenu() {
+  const sidebar = document.getElementById("sidebar");
+
+  const toggleBtn = document.createElement("button");
+  toggleBtn.className = "menu-toggle";
+  toggleBtn.setAttribute("aria-label", "Open menu");
+  toggleBtn.innerHTML = '<i class="bi bi-list"></i>';
+
+  const closeBtn = document.createElement("button");
+  closeBtn.className = "menu-close";
+  closeBtn.setAttribute("aria-label", "Close menu");
+  closeBtn.innerHTML = '<i class="bi bi-x-lg"></i>';
+
+  const overlay = document.createElement("div");
+  overlay.className = "sidebar-overlay";
+
+  sidebar.appendChild(closeBtn);
+  document.body.append(toggleBtn, overlay);
+
+  function setMenu(isOpen) {
+    sidebar.classList.toggle("open", isOpen);
+    overlay.classList.toggle("show", isOpen);
+    document.body.classList.toggle("no-scroll", isOpen);
+  }
+
+  toggleBtn.addEventListener("click", () => setMenu(true));
+  closeBtn.addEventListener("click", () => setMenu(false));
+  overlay.addEventListener("click", () => setMenu(false));
+  document.addEventListener("keydown", event => { if (event.key === "Escape") setMenu(false); });
+
+  // back to desktop size: reset everything
+  window.addEventListener("resize", () => { if (window.innerWidth > 1024) setMenu(false); });
+}
+
 buildSidebar();
+setupMobileMenu();

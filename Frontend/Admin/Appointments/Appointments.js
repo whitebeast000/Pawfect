@@ -31,22 +31,23 @@ function renderAppointments() {
     return `
       <tr>
         <td>
-          <div class="cell-main">${pet ? escapeHtml(pet.name) : "Removed pet"}</div>
-          <div class="cell-sub">${owner ? escapeHtml(owner.full_name) : "—"}</div>
+          <div>
+            <div class="cell-main">${pet ? escapeHtml(pet.name) : "Removed pet"}</div>
+            <div class="cell-sub">${owner ? escapeHtml(owner.full_name) : "—"}</div>
+          </div>
         </td>
-        <td>${escapeHtml(appt.vet_name)}</td>
-        <td>
-          <div>${formatDate(appt.appointment_date)}</div>
-          <div class="cell-sub">${formatTime(appt.appointment_time)}</div>
-        </td>
-        <td>${escapeHtml(appt.reason)}</td>
-        <td>
-          ${statusBadge(appt.status[0].toUpperCase() + appt.status.slice(1), STATUS_COLORS[appt.status])}
-          <select class="input" data-id="${appt.id}" style="padding:6px 10px; margin-left:8px;">
-            <option value="upcoming"  ${appt.status === "upcoming"  ? "selected" : ""}>Upcoming</option>
-            <option value="completed" ${appt.status === "completed" ? "selected" : ""}>Completed</option>
-            <option value="cancelled" ${appt.status === "cancelled" ? "selected" : ""}>Cancelled</option>
-          </select>
+        <td data-label="Vet">${escapeHtml(appt.vet_name)}</td>
+        <td data-label="Date &amp; time">${formatDate(appt.appointment_date)}, ${formatTime(appt.appointment_time)}</td>
+        <td data-label="Reason">${escapeHtml(appt.reason)}</td>
+        <td data-label="Status">
+          <span>
+            ${statusBadge(appt.status[0].toUpperCase() + appt.status.slice(1), STATUS_COLORS[appt.status])}
+            <select class="input status-select" data-id="${appt.id}">
+              <option value="upcoming"  ${appt.status === "upcoming"  ? "selected" : ""}>Upcoming</option>
+              <option value="completed" ${appt.status === "completed" ? "selected" : ""}>Completed</option>
+              <option value="cancelled" ${appt.status === "cancelled" ? "selected" : ""}>Cancelled</option>
+            </select>
+          </span>
         </td>
       </tr>`;
   }).join("");

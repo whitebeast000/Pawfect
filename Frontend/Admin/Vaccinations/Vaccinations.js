@@ -25,16 +25,18 @@ function renderVaccinations() {
     const owner = pet ? findUser(pet.owner_id) : null;
     const status = getVaccineStatus(record.next_due);
 
-    return `
+        return `
       <tr>
         <td>
-          <div class="cell-main">${pet ? escapeHtml(pet.name) : "Removed pet"}</div>
-          <div class="cell-sub">${owner ? escapeHtml(owner.full_name) : "—"}</div>
+          <div>
+            <div class="cell-main">${pet ? escapeHtml(pet.name) : "Removed pet"}</div>
+            <div class="cell-sub">${owner ? escapeHtml(owner.full_name) : "—"}</div>
+          </div>
         </td>
-        <td class="cell-main">${escapeHtml(record.vaccine_name)}</td>
-        <td>${formatDate(record.given_on)}</td>
-        <td>${formatDate(record.next_due)}</td>
-        <td>${statusBadge(status.label, status.color)}</td>
+        <td data-label="Vaccine">${escapeHtml(record.vaccine_name)}</td>
+        <td data-label="Given">${formatDate(record.given_on)}</td>
+        <td data-label="Next due">${formatDate(record.next_due)}</td>
+        <td data-label="Status">${statusBadge(status.label, status.color)}</td>
         <td><div class="row-actions">
           <button class="btn btn-danger btn-small" data-id="${record.id}">Delete</button>
         </div></td>

@@ -31,16 +31,18 @@ function renderUsers() {
       </button>
       <button class="btn btn-danger btn-small" data-action="delete" data-id="${user.id}">Delete</button>`;
 
-    return `
+        return `
       <tr>
         <td>
-          <div class="cell-main">${escapeHtml(user.full_name)}</div>
-          <div class="cell-sub">${escapeHtml(user.email)}</div>
+          <div>
+            <div class="cell-main">${escapeHtml(user.full_name)}</div>
+            <div class="cell-sub">${escapeHtml(user.email)}</div>
+          </div>
         </td>
-        <td>${isAdmin ? "Admin" : "Owner"}</td>
-        <td>${isAdmin ? "—" : petCount}</td>
-        <td>${formatDate(user.joined_at)}</td>
-        <td>${statusBadge(user.status === "active" ? "Active" : "Blocked", statusColor)}</td>
+        <td data-label="Role">${isAdmin ? "Admin" : "Owner"}</td>
+        <td data-label="Pets">${isAdmin ? "—" : petCount}</td>
+        <td data-label="Joined">${formatDate(user.joined_at)}</td>
+        <td data-label="Status">${statusBadge(user.status === "active" ? "Active" : "Blocked", statusColor)}</td>
         <td><div class="row-actions">${actions}</div></td>
       </tr>`;
   }).join("");

@@ -1,7 +1,3 @@
-/* =========================================================
-   admin.css  -  shared styles for every admin page
-   Same palette + fonts as the user side of Pawfect.
-   ========================================================= */
 
 :root {
   --bg: #f9ece5;
@@ -218,11 +214,143 @@ td { padding: 14px 10px; border-top: 1px solid var(--line); font-size: 14px; ver
 .modal { width: 100%; max-width: 520px; background: var(--card); border-radius: 24px; padding: 28px; }
 .modal-actions { display: flex; gap: 10px; margin-top: 8px; }
 
-/* ---------- Small screens ---------- */
-@media (max-width: 900px) {
+/* ---------- Hamburger menu (hidden on big screens) ---------- */
+.menu-toggle,
+.menu-close,
+.sidebar-overlay {
+  display: none;
+}
+
+/* ---------- Tablets and small laptops ---------- */
+@media (max-width: 1024px) {
   .admin-shell { grid-template-columns: 1fr; }
-  .sidebar { position: static; height: auto; }
-  .nav { flex-direction: row; flex-wrap: wrap; }
-  .main { padding: 24px 18px; }
-  .stats, .grid-2 { grid-template-columns: 1fr; }
+
+  /* sidebar becomes a drawer that slides in from the left */
+  .sidebar {
+    position: fixed;
+    top: 0; left: 0; bottom: 0;
+    width: 260px;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  .sidebar.open { transform: translateX(0); }
+
+  /* hamburger button */
+  .menu-toggle {
+    display: flex;
+    align-items: center; justify-content: center;
+    position: fixed;
+    top: 14px; left: 14px;
+    z-index: 900;
+    width: 42px; height: 42px;
+    border: none;
+    border-radius: 12px;
+    background: var(--brown);
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  /* X inside the drawer */
+  .menu-close {
+    display: block;
+    position: absolute;
+    top: 14px; right: 14px;
+    border: none;
+    background: none;
+    color: #ecd3c8;
+    font-size: 22px;
+    cursor: pointer;
+  }
+
+  /* dark layer behind the drawer, tap to close */
+  .sidebar-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 999;
+  }
+  .sidebar-overlay.show { opacity: 1; pointer-events: auto; }
+
+  body.no-scroll { overflow: hidden; }
+
+  /* top space so content isn't under the hamburger button */
+  .main { padding: 72px 24px 32px; }
+
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .grid-2 { grid-template-columns: 1fr; }
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 600px) {
+  .main { padding: 70px 16px 24px; }
+  .stats { grid-template-columns: 1fr; }
+
+  .page-header { flex-direction: column; gap: 14px; }
+  .page-header h1 { font-size: 34px; }
+  .page-header .btn { width: 100%; }
+
+  .card { padding: 18px; }
+  .toolbar .input { width: 100%; }
+
+  .modal { margin: 0 16px; padding: 22px; }
+  .bar-row { grid-template-columns: 90px 1fr 24px; }
+  .status-select { margin-left: 0; }
+
+  /* ----- tables turn into cards (only tables with class "table-cards") ----- */
+  .table-cards,
+  .table-cards tbody,
+  .table-cards tr { display: block; width: 100%; }
+
+  .table-cards thead { display: none; }
+
+  .table-cards tr {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 6px 16px;
+    margin-bottom: 14px;
+  }
+
+  .table-cards td {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6px 12px;
+    padding: 9px 0;
+    border-top: none;
+    text-align: right;
+  }
+
+  /* the label comes from each cell's data-label */
+  .table-cards td[data-label]::before {
+    content: attr(data-label);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: left;
+  }
+
+  /* first cell works as the card heading */
+  .table-cards td:first-child {
+    display: block;
+    text-align: left;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .table-cards .row-actions { flex-wrap: wrap; }
+
+  /* the "No users found" row */
+  .table-cards td.empty { display: block; text-align: center; }
 }

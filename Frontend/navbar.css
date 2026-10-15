@@ -135,3 +135,98 @@
   
 
 }
+
+
+/* ---------- Hamburger menu (small screens) ---------- */
+
+/* hidden on big screens */
+.menu-toggle,
+.menu-close,
+.nav-overlay {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+
+    /* sidebar column disappears, content takes the full width */
+    .main-container {
+        grid-template-columns: 1fr;
+    }
+
+    /* sidebar becomes a drawer that slides in from the left */
+    .left {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 270px;
+        height: 100vh;
+        overflow-y: auto;
+        z-index: 1000;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .left.open {
+        transform: translateX(0);
+    }
+
+    /* the hamburger button */
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 14px;
+        left: 14px;
+        z-index: 900;
+        width: 42px;
+        height: 42px;
+        border: none;
+        border-radius: 12px;
+        background-color: #8f6b64;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    /* close (X) button inside the drawer */
+    .menu-close {
+        display: block;
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        border: none;
+        background: none;
+        color: #8f6b64;
+        font-size: 22px;
+        cursor: pointer;
+    }
+
+    /* dark layer behind the drawer, tap it to close */
+    .nav-overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.4);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        z-index: 999;
+    }
+
+    .nav-overlay.show {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    /* stops the page scrolling behind the open menu */
+    body.no-scroll {
+        overflow: hidden;
+    }
+
+    /* keeps page content from hiding under the hamburger button */
+    .right {
+        padding-top: 66px;
+    }
+}

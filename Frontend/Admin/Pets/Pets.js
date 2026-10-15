@@ -25,21 +25,24 @@ function renderPets() {
     const owner = findUser(pet.owner_id);
     const healthColor = pet.health_status === "Healthy" ? "green" : "amber";
 
-    return `
+        return `
       <tr>
         <td>
-          <div class="cell-main">${escapeHtml(pet.name)}</div>
-          <div class="cell-sub">${escapeHtml(pet.breed)} · ${pet.gender}</div>
+          <div>
+            <div class="cell-main">${escapeHtml(pet.name)}</div>
+            <div class="cell-sub">${escapeHtml(pet.breed)} · ${pet.gender}</div>
+          </div>
         </td>
-        <td>${pet.species}</td>
-        <td>${owner ? escapeHtml(owner.full_name) : "—"}</td>
-        <td>${getAge(pet.dob)}</td>
-        <td>${pet.weight_kg} kg</td>
-        <td>${statusBadge(pet.health_status, healthColor)}</td>
+        <td data-label="Species">${pet.species}</td>
+        <td data-label="Owner">${owner ? escapeHtml(owner.full_name) : "—"}</td>
+        <td data-label="Age">${getAge(pet.dob)}</td>
+        <td data-label="Weight">${pet.weight_kg} kg</td>
+        <td data-label="Health">${statusBadge(pet.health_status, healthColor)}</td>
         <td><div class="row-actions">
           <button class="btn btn-danger btn-small" data-id="${pet.id}">Remove</button>
         </div></td>
       </tr>`;
+      
   }).join("");
 }
 
