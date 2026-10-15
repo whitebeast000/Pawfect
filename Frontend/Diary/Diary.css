@@ -102,13 +102,13 @@
 } */
 
 @media (max-width: 900px) {
-    .articles-container {
+    .pet-diary-container {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
 @media (max-width: 600px) {
-    .articles-container {
+    .pet-diary-container {
         grid-template-columns: 1fr;
     }
 }

@@ -5,8 +5,9 @@
 }
 .main-container{
     display: grid;
-    grid-template-columns: 2fr 9fr;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 9fr);
     height: 100vh;
+    min-width: 0;
     /* overflow: hidden; */
 }
 
@@ -26,6 +27,7 @@
     background-color:#f3efed ;
     width: 100%;
     height: 100%;
+    min-width: 0;
 
     padding: 20px 30px;
 }
@@ -58,6 +60,10 @@
 .right
 {
     background-color:#EADBD2 ;
+    min-width: 0;
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 .nav-list >ul >li
 {
@@ -150,7 +156,7 @@
 
     /* sidebar column disappears, content takes the full width */
     .main-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
     }
 
     /* sidebar becomes a drawer that slides in from the left */
@@ -159,7 +165,7 @@
         top: 0;
         left: 0;
         bottom: 0;
-        width: 270px;
+        width: min(270px, calc(100vw - 32px));
         height: 100vh;
         overflow-y: auto;
         z-index: 1000;
@@ -228,5 +234,23 @@
     /* keeps page content from hiding under the hamburger button */
     .right {
         padding-top: 66px;
+        min-height: 100vh;
+    }
+}
+
+@media (max-width: 600px) {
+    .left {
+        padding: 20px;
+    }
+
+    .menu-toggle {
+        top: 12px;
+        left: 12px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .right {
+        padding-top: 62px;
     }
 }

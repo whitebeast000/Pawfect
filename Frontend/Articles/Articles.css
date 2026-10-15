@@ -24,6 +24,7 @@
 
 .Articles-list{ 
         display: flex;
+        flex-wrap: wrap;
         color: var(--muted); 
         gap: 10px;
 }

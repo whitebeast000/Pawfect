@@ -33,7 +33,7 @@
 
 .addpet-card {
   display: grid;
-  grid-template-columns: 260px 1fr;
+  grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
   gap: 36px;
   align-items: start;
   background: #fff8f3;
@@ -81,7 +81,7 @@
 
 .addpet-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 37px 20px;
 }
 .addpet-field {
@@ -135,6 +135,7 @@
 
 .addpet-actions {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 12px;
   margin-top: 17px;
@@ -180,7 +181,11 @@
   .addpet-photo-frame { margin: 0 auto; }
 }
 @media (max-width: 600px) {
+  .addpet-page { padding: 20px 16px 32px; }
+  .addpet-card { padding: 18px; border-radius: 18px; }
   .addpet-grid { grid-template-columns: 1fr; gap: 20px; }
-  .addpet-title { font-size: 34px; }
+  .addpet-title { font-size: clamp(30px, 9vw, 34px); }
   .addpet-photo-frame { width: 100%; max-width: 260px; }
+  .addpet-actions { align-items: stretch; }
+  .addpet-btn { flex: 1 1 130px; }
 }

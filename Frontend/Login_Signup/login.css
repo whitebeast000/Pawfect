@@ -25,7 +25,8 @@
 }
 .main-container
 {   
-    height: 100vh;
+    min-height: 100vh;
+    min-width: 0;
     display: flex;
 }
 input,label, span,a ,button,p {
@@ -39,6 +40,8 @@ input,label, span,a ,button,p {
 {   
     display: flex;
     flex: 1;
+    min-width: 0;
+    min-height: 100vh;
     justify-content: center;
     /* align-items: center; */
     padding: 60px 0px;
@@ -94,6 +97,8 @@ input,label, span,a ,button,p {
 .right
 {   
     flex: 1;
+    min-width: 0;
+    min-height: 100vh;
     align-items: center;
     justify-content: center;
     background-color: #F7F2EE;
@@ -112,7 +117,7 @@ input:focus{
 }
 .right-content
 {
-    width: 65%;
+    width: min(65%, 480px);
     gap: 10px;   
 }
 
@@ -146,4 +151,44 @@ input:focus{
 a{
     color: #8f6b64;
     text-decoration: none;
+}
+
+@media (max-width: 760px) {
+    .main-container {
+        flex-direction: column;
+    }
+
+    .left {
+        flex: 0 0 auto;
+        min-height: 0;
+        padding: 28px 24px;
+    }
+
+    .left-content,
+    .left-content-up {
+        width: 100%;
+        gap: 14px;
+    }
+
+    .left-content { gap: 0; }
+    .ex-info { display: none; }
+    .logo { padding: 8px 0; }
+    .main-heading { width: 100%; font-size: 40px; }
+
+    .right {
+        flex: 1 0 auto;
+        min-height: 0;
+        padding: 32px 24px;
+    }
+
+    .right-content { width: min(100%, 480px); }
+    .login-options { flex-wrap: wrap; gap: 10px; }
+}
+
+@media (max-width: 420px) {
+    .left { padding: 22px 18px; }
+    .right { padding: 26px 18px; }
+    .main-heading { font-size: 34px; }
+    .login-options { align-items: flex-start; }
+    .login-options > a { font-size: 14px; }
 }
