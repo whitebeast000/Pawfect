@@ -1,0 +1,186 @@
+.addpet-page {
+  --addpet-brown: #8b5550;
+  --addpet-brown-dark: #6f423e;
+  --addpet-title: #8a4f4a;
+  --addpet-text: #5c3b37;
+  --addpet-muted: #a07f7a;
+  --addpet-border: #ebdad3;
+
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  color: var(--addpet-text);
+  padding: 30px 45px 44px 44px;
+  box-sizing: border-box;
+}
+.addpet-page *,
+.addpet-page *::before,
+.addpet-page *::after {
+  box-sizing: border-box;
+}
+
+.addpet-title {
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--addpet-title);
+  margin: 0;
+}
+.addpet-subtitle {
+  margin: 6px 0 24px;
+  font-size: 14px;
+  color: var(--addpet-muted);
+}
+
+.addpet-card {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 36px;
+  align-items: start;
+  background: #fff8f3;
+  border-radius: 24px;
+  padding: 24px 24px 25px 25px;
+  box-shadow: 0 8px 30px rgba(139, 85, 80, 0.08);
+}
+
+.addpet-photo {
+  text-align: center;
+}
+.addpet-photo-frame {
+  width: 260px;
+  height: 240px;
+  border-radius: 16px;
+  overflow: hidden;
+  display: block;
+  background: linear-gradient(145deg, #f2dad1, #dcb1a7);
+}
+.addpet-photo-frame svg,
+.addpet-photo-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.addpet-photo-link {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 12px;
+  color: #7a5550;
+  cursor: pointer;
+}
+.addpet-photo-link:hover {
+  color: var(--addpet-brown);
+  text-decoration: underline;
+}
+.addpet-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+.addpet-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 37px 20px;
+}
+.addpet-field {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.addpet-field-wide {
+  margin-top: 17px;
+}
+.addpet-label {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 14px;
+  color: var(--addpet-brown);
+  margin-bottom: 6px;
+}
+
+.addpet-input,
+.addpet-select {
+  width: 100%;
+  height: 46px;
+  padding: 0 16px;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--addpet-text);
+  background: #fff;
+  border: 1px solid var(--addpet-border);
+  border-radius: 12px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.addpet-input::placeholder {
+  color: var(--addpet-text);
+  opacity: 1;
+}
+.addpet-input:focus,
+.addpet-select:focus {
+  border-color: var(--addpet-brown);
+  box-shadow: 0 0 0 3px rgba(139, 85, 80, 0.14);
+}
+.addpet-select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 40px;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%235c3b37' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+}
+
+.addpet-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 17px;
+}
+.addpet-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.addpet-btn-primary {
+  height: 41px;
+  padding: 0 24px;
+  color: #fff;
+  background: var(--addpet-brown);
+  border: 1px solid var(--addpet-brown);
+}
+.addpet-btn-primary:hover {
+  background: var(--addpet-brown-dark);
+  box-shadow: 0 6px 14px rgba(139, 85, 80, 0.28);
+}
+.addpet-btn-ghost {
+  height: 43px;
+  padding: 0 24px;
+  font-weight: 500;
+  color: var(--addpet-brown);
+  background: transparent;
+  border: 1px solid var(--addpet-brown);
+}
+.addpet-btn-ghost:hover {
+  background: #fbeee8;
+}
+
+@media (max-width: 960px) {
+  .addpet-page { padding: 24px 20px 40px; }
+  .addpet-card { grid-template-columns: 1fr; gap: 24px; }
+  .addpet-photo-frame { margin: 0 auto; }
+}
+@media (max-width: 600px) {
+  .addpet-grid { grid-template-columns: 1fr; gap: 20px; }
+  .addpet-title { font-size: 34px; }
+  .addpet-photo-frame { width: 100%; max-width: 260px; }
+}
