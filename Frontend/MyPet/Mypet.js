@@ -1,3 +1,4 @@
+
 const pets = [
     {
         name: "Bella",
@@ -5,7 +6,7 @@ const pets = [
         details: "Age: 2 years · Weight: 24 kg",
         status: "Healthy",
         image: "../Images/avatar.jpg",
-        profileUrl: "#"
+        profileUrl: "../PetProfile/petprofile.html?pet=Bella"
     },
     {
         name: "Luna",
@@ -13,7 +14,7 @@ const pets = [
         details: "Age: 1 year · Weight: 4 kg",
         status: "Healthy",
         image: "../Images/avatar.jpg",
-        profileUrl: "#"
+        profileUrl: "../PetProfile/petprofile.html?pet=Luna"
     },
     {
         name: "Max",
@@ -21,7 +22,7 @@ const pets = [
         details: "Age: 3 years · Weight: 12 kg",
         status: "Healthy",
         image: "../Images/avatar.jpg",
-        profileUrl: "#"
+        profileUrl: "../PetProfile/petprofile.html?pet=Max"
     }
 ];
 
@@ -29,6 +30,11 @@ const petsContainer = document.getElementById("pets-container");
 const petTemplate = document.getElementById("pet-template");
 
 function renderPets(list) {
+    if (!petsContainer || !petTemplate) {
+        console.error("Pet container or pet template was not found.");
+        return;
+    }
+
     petsContainer.innerHTML = "";
 
     list.forEach(function (pet) {
@@ -42,7 +48,9 @@ function renderPets(list) {
         card.querySelector(".pet-breed").textContent = pet.breed;
         card.querySelector(".pet-status").textContent = pet.status;
         card.querySelector(".pet-details").textContent = pet.details;
-        card.querySelector(".view-profile").href = pet.profileUrl;
+
+        const profileLink = card.querySelector(".view-profile");
+        profileLink.href = pet.profileUrl;
 
         petsContainer.appendChild(card);
     });
