@@ -5,9 +5,8 @@
 }
 .main-container{
     display: grid;
-    grid-template-columns: minmax(0, 2fr) minmax(0, 9fr);
+    grid-template-columns: 2fr 9fr;
     height: 100vh;
-    min-width: 0;
     /* overflow: hidden; */
 }
 
@@ -27,7 +26,6 @@
     background-color:#f3efed ;
     width: 100%;
     height: 100%;
-    min-width: 0;
 
     padding: 20px 30px;
 }
@@ -60,10 +58,6 @@
 .right
 {
     background-color:#EADBD2 ;
-    min-width: 0;
-    min-height: 0;
-    overflow-x: hidden;
-    overflow-y: auto;
 }
 .nav-list >ul >li
 {
@@ -142,115 +136,149 @@
 
 }
 
-
-/* ---------- Hamburger menu (small screens) ---------- */
-
-/* hidden on big screens */
-.menu-toggle,
-.menu-close,
-.nav-overlay {
-    display: none;
+@media (min-width: 1024px) {
+    .navbar-mobile-bar,
+    .navbar-mobile-overlay {
+        display: none;
+    }
 }
 
-@media (max-width: 1024px) {
-
-    /* sidebar column disappears, content takes the full width */
+@media (max-width: 1023px) {
     .main-container {
-        grid-template-columns: minmax(0, 1fr);
+        grid-template-columns: 1fr;
+        height: auto;
+        min-height: 100dvh;
+        padding-top: 56px;
     }
 
-    /* sidebar becomes a drawer that slides in from the left */
+    .right {
+        width: 100%;
+        min-width: 0;
+    }
+
     .left {
         position: fixed;
-        top: 0;
-        left: 0;
+        z-index: 1101;
+        top: 56px;
         bottom: 0;
-        width: min(270px, calc(100vw - 32px));
-        height: 100vh;
+        left: 0;
+        width: min(280px, 85vw);
+        height: auto;
+        overflow-x: hidden;
         overflow-y: auto;
-        z-index: 1000;
+        overscroll-behavior: contain;
         transform: translateX(-100%);
-        transition: transform 0.3s ease;
+        transition: transform 220ms ease;
     }
 
-    .left.open {
+    .left.is-open {
         transform: translateX(0);
     }
 
-    /* the hamburger button */
-    .menu-toggle {
+    .navbar-mobile-bar {
+        position: fixed;
+        z-index: 1103;
+        inset: 0 0 auto;
         display: flex;
         align-items: center;
+        height: 56px;
+        padding: 0 6px;
+        background: #f3efed;
+    }
+
+    .navbar-menu-toggle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         justify-content: center;
-        position: fixed;
-        top: 14px;
-        left: 14px;
-        z-index: 900;
-        width: 42px;
-        height: 42px;
-        border: none;
-        border-radius: 12px;
-        background-color: #8f6b64;
-        color: white;
-        font-size: 24px;
-        cursor: pointer;
-    }
-
-    /* close (X) button inside the drawer */
-    .menu-close {
-        display: block;
-        position: absolute;
-        top: 14px;
-        right: 14px;
-        border: none;
-        background: none;
+        gap: 5px;
+        width: 44px;
+        height: 44px;
+        padding: 10px;
+        border: 0;
+        border-radius: 8px;
+        background: transparent;
         color: #8f6b64;
-        font-size: 22px;
         cursor: pointer;
     }
 
-    /* dark layer behind the drawer, tap it to close */
-    .nav-overlay {
+    .navbar-menu-toggle span {
         display: block;
+        width: 22px;
+        height: 2px;
+        border-radius: 2px;
+        background: currentColor;
+    }
+
+    .navbar-mobile-overlay {
         position: fixed;
-        inset: 0;
-        background-color: rgba(0, 0, 0, 0.4);
+        z-index: 1100;
+        inset: 56px 0 0;
+        background: rgba(0, 0, 0, 0.48);
         opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.3s ease;
-        z-index: 999;
+        visibility: hidden;
+        transition: opacity 220ms ease, visibility 220ms ease;
     }
 
-    .nav-overlay.show {
+    .navbar-mobile-overlay.is-visible {
         opacity: 1;
-        pointer-events: auto;
+        visibility: visible;
     }
 
-    /* stops the page scrolling behind the open menu */
-    body.no-scroll {
-        overflow: hidden;
+    .navbar-menu-toggle:focus-visible,
+    .left a:focus-visible,
+    .left button:focus-visible,
+    .left-bottom:focus-visible {
+        outline: 3px solid #8f6b64;
+        outline-offset: 3px;
     }
 
-    /* keeps page content from hiding under the hamburger button */
-    .right {
-        padding-top: 66px;
-        min-height: 100vh;
+    body.nav-drawer-open {
+        overscroll-behavior: none;
     }
 }
 
-@media (max-width: 600px) {
-    .left {
-        padding: 20px;
+@media (max-width: 1023px) {
+    .main-container {
+        padding-top: 0;
     }
 
-    .menu-toggle {
-        top: 12px;
-        left: 12px;
-        width: 40px;
-        height: 40px;
+    .left,
+    .right,
+    .main-container {
+        min-width: 0;
     }
 
     .right {
-        padding-top: 62px;
+        padding-top: 56px;
+    }
+
+    .left img,
+    .right img {
+        max-width: 100%;
+    }
+
+    .nav-list > ul > li {
+        min-width: 0;
+        min-height: 44px;
+    }
+
+    .nav-list-item > a {
+        display: flex;
+        align-items: center;
+        min-width: 0;
+        min-height: 44px;
+        overflow-wrap: anywhere;
+    }
+
+    .logout-btn {
+        min-height: 44px;
+    }
+}
+
+@media (max-width: 1023px) and (prefers-reduced-motion: reduce) {
+    .left,
+    .navbar-mobile-overlay {
+        transition: none;
     }
 }

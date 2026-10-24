@@ -1,0 +1,636 @@
+/* =========================================================
+   PawCare – Appointments page (main section)
+   ========================================================= */
+
+:root {
+  --bg: #fbf1ea;
+  --card: #fff8f4;
+  --brown: #8a5248;
+  --brown-dark: #6d3d35;
+  --brown-text: #5a3a34;
+  --muted: #8f7a74;
+  --blush: #ecd3cb;
+  --border: #f0e0d8;
+  --field-border: #ecd9d1;
+  --green-soft: #dfead9;
+  --green-text: #5d7f58;
+
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* ---------- Main wrapper ---------- */
+.main {
+  min-height: 100vh;
+  padding: 32px 44px 48px;
+  font-family: var(--font-body);
+  color: var(--brown-text);
+  background:
+    radial-gradient(circle at 100% 0%, #f7e0d8 0%, transparent 40%),
+    var(--bg);
+}
+
+.main h1,
+.main h2,
+.main p,
+.main ul {
+  margin: 0;
+  padding: 0;
+}
+
+.main ul { list-style: none; }
+
+/* ---------- Page heading ---------- */
+.page-head { margin-bottom: 24px; }
+
+.page-title {
+  font-family: var(--font-display);
+  font-size: 38px;
+  font-weight: 500;
+  line-height: 1.1;
+  color: var(--brown-dark);
+}
+
+.page-sub {
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* ---------- Two column layout ---------- */
+.appt-grid {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.card {
+  padding: 26px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: 0 6px 20px rgba(138, 82, 72, 0.05);
+}
+
+.card-title {
+  margin-bottom: 14px;
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--brown-dark);
+}
+
+/* ---------- Form ---------- */
+.book-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.field label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--brown);
+}
+
+.field select,
+.field input {
+  width: 100%;
+  height: 46px;
+  padding: 0 16px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--brown-dark);
+  background: #fffdfb;
+  border: 1px solid var(--field-border);
+  border-radius: 12px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.field select {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  padding-right: 40px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%238a5248' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+}
+
+.field select:focus,
+.field input:focus {
+  border-color: var(--brown);
+  box-shadow: 0 0 0 3px rgba(138, 82, 72, 0.15);
+}
+
+/* ---------- Buttons ---------- */
+.btn-book {
+  width: 100%;
+  height: 42px;
+  margin-top: 2px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  background: var(--brown);
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-book:hover { background: var(--brown-dark); }
+
+.btn-outline {
+  flex: 0 0 auto;
+  padding: 9px 16px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--brown);
+  background: transparent;
+  border: 1px solid var(--brown);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.btn-outline:hover {
+  background: var(--brown);
+  color: #fff;
+}
+
+.btn-book:focus-visible,
+.btn-outline:focus-visible {
+  outline: 3px solid rgba(138, 82, 72, 0.4);
+  outline-offset: 3px;
+}
+
+/* ---------- Upcoming list ---------- */
+.appt {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.appt:first-child { padding-top: 6px; }
+.appt:last-child  { border-bottom: 0; padding-bottom: 6px; }
+
+.appt-icon {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--blush);
+  color: var(--brown);
+  font-size: 16px;
+}
+
+.appt-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.appt-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--brown-dark);
+}
+
+.appt-sub {
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.badge-done {
+  flex: 0 0 auto;
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--green-text);
+  background: var(--green-soft);
+  border-radius: 999px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1000px) {
+  .appt-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .main { padding: 24px 18px 40px; }
+  .page-title { font-size: 30px; }
+  .field-row { grid-template-columns: 1fr; gap: 14px; }
+  .appt { flex-wrap: wrap; }
+}
+
+/* ---------- API states ---------- */
+.form-message {
+  min-height: 18px;
+  font-size: 13px;
+  text-align: center;
+  color: var(--green-text);
+}
+
+.form-message.is-error { color: #b4574a; }
+
+.btn-book:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.list-empty {
+  padding: 20px 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* =========================================================
+   Extra styles for the functional pages
+   ========================================================= */
+
+/* placeholders and empty selects */
+.field input::placeholder { color: #b3a09a; }
+.field select:required:invalid { color: #b3a09a; }
+.field select option { color: var(--brown-dark); }
+.field select:disabled,
+.field input:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* links that look like buttons */
+a.btn-book,
+a.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+a.btn-book { display: flex; }
+
+.btn-outline--danger {
+  color: #b4574a;
+  border-color: #b4574a;
+}
+.btn-outline--danger:hover {
+  background: #b4574a;
+  color: #fff;
+}
+
+/* notice banner */
+.main .notice {
+  width: fit-content;        /* banner is only as wide as its text */
+  max-width: 100%;
+  margin: 0 0 24px;          /* 24px gap below the banner, before the form cards */
+  padding: 14px 20px;        /* space inside the banner */
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--green-text);
+  background: var(--green-soft);
+  border-radius: 14px;
+}
+.notice[hidden],
+[hidden] { display: none !important; }
+
+/* narrow single card pages */
+.page-narrow { max-width: 620px; }
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 6px;
+}
+.btn-row .btn-outline { flex: 1; min-width: 140px; }
+
+/* confirmation page */
+.confirm-icon {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 14px;
+  font-size: 24px;
+  color: #fff;
+  background: var(--brown);
+  border-radius: 50%;
+}
+
+.summary { margin-bottom: 20px; }
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+  font-size: 14px;
+  border-bottom: 1px solid var(--border);
+}
+.summary-row:last-child { border-bottom: 0; }
+.summary-row span:first-child { color: var(--muted); }
+.summary-row span:last-child {
+  font-weight: 600;
+  text-align: right;
+  color: var(--brown-dark);
+}
+
+.actions { display: flex; flex-direction: column; gap: 12px; }
+
+@media (max-width: 600px) {
+  .btn-row .btn-outline { flex: 1 1 100%; }
+}
+
+/* =========================================================
+   Appointment statuses: awaiting update / missed
+   ========================================================= */
+.appt-sub--wait {
+  font-weight: 500;
+  color: #9a6b1c;
+}
+
+.appt-actions {
+  flex: 0 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.appt-actions .btn-outline {
+  padding: 7px 14px;
+  font-size: 13px;
+}
+
+.badge-missed {
+  flex: 0 0 auto;
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #b4574a;
+  background: #f6d9d4;
+  border-radius: 999px;
+}
+
+/* ---------- Responsive: up to 1200px ---------- */
+@media (max-width: 1200px) {
+  .main,
+  .main > *,
+  .appt-grid > *,
+  .field-row > *,
+  .appt > *,
+  .appt-actions > *,
+  .summary-row > *,
+  .btn-row > * {
+    min-width: 0;
+  }
+
+  .appt-grid {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  }
+
+  .page-title { font-size: clamp(30px, 3.2vw, 38px); }
+
+  .appt-title,
+  .appt-sub {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .summary-row span:last-child {
+    overflow-wrap: anywhere;
+  }
+}
+
+/* ---------- Responsive: up to 992px ---------- */
+@media (max-width: 992px) {
+  .appt-grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* ---------- Responsive: up to 768px ---------- */
+@media (max-width: 768px) {
+  .main a,
+  .main button,
+  .main .btn-book,
+  .main .btn-outline {
+    min-height: 44px;
+  }
+
+  .appt-actions .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: normal;
+    text-align: center;
+    overflow-wrap: anywhere;
+  }
+}
+
+/* ---------- Responsive: up to 576px ---------- */
+@media (max-width: 576px) {
+  .main { padding: 24px 16px 32px; }
+
+  .page-head { margin-bottom: 20px; }
+  .page-title { font-size: clamp(28px, 7vw, 34px); }
+
+  .appt-grid { gap: 16px; }
+  .card { padding: 22px 18px; }
+
+  .field-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .appt {
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr);
+    align-items: start;
+    gap: 10px;
+  }
+
+  .appt > .appt-icon { grid-column: 1; }
+  .appt > .appt-info { grid-column: 2; }
+
+  .appt > .btn-outline,
+  .appt > .badge-done,
+  .appt > .appt-actions {
+    grid-column: 2;
+    width: 100%;
+  }
+
+  .appt-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+    justify-content: stretch;
+    width: 100%;
+  }
+
+  .appt-actions .btn-outline {
+    min-width: 0;
+    width: 100%;
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  .appt > .btn-outline { width: 100%; }
+
+  .page-narrow {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .btn-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .btn-row .btn-outline {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+/* ---------- Responsive: up to 400px ---------- */
+@media (max-width: 400px) {
+  .main { padding-right: 16px; padding-left: 16px; }
+  .card { padding-right: 16px; padding-left: 16px; }
+
+  .appt {
+    grid-template-columns: 36px minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .appt-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .appt-actions { gap: 6px; }
+  .appt-actions .btn-outline { font-size: 12px; }
+
+  .summary-row { gap: 10px; }
+}
+
+@media (max-width: 1200px) {
+  .appt-grid,
+  .appt-grid > *,
+  .appt-side,
+  .appt-side > *,
+  .appt > *,
+  .appt-actions > *,
+  .field-row > *,
+  .card-head > * {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 1000px) {
+  .appt-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 1023px) {
+  .main a,
+  .main button,
+  .main .btn-book,
+  .main .btn-outline {
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: 1.5rem 1rem 2rem;
+  }
+
+  .page-title {
+    font-size: clamp(1.75rem, 7vw, 2.125rem);
+  }
+
+  .field-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .field input,
+  .field select {
+    font-size: 16px;
+  }
+
+  .appt {
+    display: grid;
+    grid-template-columns: 2.25rem minmax(0, 1fr);
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .appt > .appt-icon {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .appt > .appt-info {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .appt > .btn-outline,
+  .appt > .badge-done,
+  .appt > .appt-actions {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+
+  .appt > .badge-done {
+    justify-self: start;
+    width: fit-content;
+  }
+
+  .appt-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    justify-content: stretch;
+    gap: 0.5rem;
+  }
+
+  .appt-actions > .badge-missed {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+
+  .appt-actions .btn-outline,
+  .appt > .btn-outline {
+    width: 100%;
+    min-width: 0;
+    padding-inline: 0.5rem;
+    text-align: center;
+  }
+
+  .page-narrow {
+    width: 100%;
+    max-width: 100%;
+  }
+}
