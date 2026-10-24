@@ -54,8 +54,29 @@ input,label, span,a ,button{
 .ex-info > p{
     text-align: right;
     width: 25%;
+<<<<<<< HEAD
     transform: rotate(-20deg);
+=======
+    transform: rotate(-10deg);
+
+>>>>>>> 1eb57fa (Index page and other changes)
 }
+
+.main_image{
+    width: 50%;
+    align-self:flex-end;
+
+}
+
+.main_image img{
+    width: 100%;
+    /* overflow: hidden; */
+    object-fit: cover;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+
+}
+
 
 .right
 {   
@@ -63,7 +84,9 @@ input,label, span,a ,button{
     align-items: center;
     justify-content: center;
     background-color: #F7F2EE;
-
+}
+.right  label{
+    margin: 5px 0px;
 }
 input{
     background-color: white;
@@ -90,10 +113,14 @@ input:focus{
     display: flex;
     justify-content: space-between;
     align-items: center;
+<<<<<<< HEAD
     flex-wrap: wrap;
     gap: 0.75rem;
     min-width: 0;
     /* margin: 14px 0; */
+=======
+    margin: 5px 0;
+>>>>>>> 1eb57fa (Index page and other changes)
 }
 .login-options-remember,
 .login-options > div
