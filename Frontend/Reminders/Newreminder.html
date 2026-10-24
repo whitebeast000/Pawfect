@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../auth-guard.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Reminders.css">
+    <link rel="stylesheet" href="../Pages.css" media="(max-width: 1200px)">
+    <link rel="stylesheet" href="../decor.css">
+    <link rel="stylesheet" href="../navbar.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <title>New reminder</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="left">
+
+            <nav class="nav-section">
+                <div class="logo">
+                    <img src="Pawfect_Logo.png" alt="PawCare logo">
+                </div>
+
+                <div class="nav-list">
+                    <ul>
+                        <li class="nav-list-item"><i class="bi bi-house-fill"></i><a href="../Dashboard/Dashboard.html">Dashboard</a></li>
+                        <li class="nav-list-item"><i class="bi bi-heart-fill"></i><a href="../MyPet/MyPet.html">MyPets</a></li>
+                        <li class="nav-list-item"><i class="bi bi-plus-lg"></i><a href="../Health/Health.html">Health</a></li>
+                        <li class="nav-list-item"><i class="bi bi-clock"></i><a href="../Appointments/Appointments.html">Appointments</a></li>
+                        <li class="nav-list-item"><i class="bi bi-check-lg"></i><a href="../DailyCare/DailyCare.html">Daily Care</a></li>
+                        <li class="nav-list-item active"><i class="bi bi-dot"></i><a href="../Reminders/Reminders.html">Reminders</a></li>
+                        <li class="nav-list-item"><i class="bi bi-journal-text"></i><a href="../Diary/Diary.html">Diary</a></li>
+                        <li class="nav-list-item"><i class="bi bi-list"></i><a href="../Articles/Articles.html">Articles</a></li>
+                        <li class="nav-list-item"><i class="bi bi-person-circle"></i><a href="../Profile/Profile.html">Profile</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div>
+                <div class="left-bottom">
+                    <img src="../Images/nav_bottom.jfif" alt="">
+                    <h3>Need advice?</h3>
+                    <p>Read our pet care guide</p>
+                </div>
+                <button class="logout-btn nav-list-item"><i class="bi bi-arrow-right"></i><span>Log out</span></button>
+            </div>
+
+        </div>
+
+        <div class="right">
+            <main class="main">
+
+                <header class="topbar">
+                    <div>
+                        <h1 class="page-title" id="pageTitle">New reminder</h1>
+                        <p class="page-sub" id="pageSub">Never miss a meal, dose or appointment.</p>
+                    </div>
+                </header>
+
+                <div class="form-layout">
+                <article class="card page-narrow" id="formCard">
+                    <h2 class="card-title" id="formTitle">Reminder details</h2>
+
+                    <form class="book-form" id="reminderForm" novalidate>
+
+                        <div class="field-row">
+                            <div class="field">
+                                <label for="pet">Pet</label>
+                                <select id="pet" name="pet" required>
+                                    <option value="" disabled selected>Select pet</option>
+                                    <option value="Max">Max</option>
+                                    <option value="Luna">Luna</option>
+                                    <option value="Coco">Coco</option>
+                                    <option value="all">All pets</option>
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label for="type">Type</label>
+                                <select id="type" name="type" required>
+                                    <option value="" disabled selected>Select type</option>
+                                    <option value="vaccination">Vaccination</option>
+                                    <option value="medicine">Medicine</option>
+                                    <option value="grooming">Grooming</option>
+                                    <option value="vet">Vet visit</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label for="name">Reminder name</label>
+                            <input type="text" id="name" name="name" placeholder="e.g. Vaccination" maxlength="40" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="details">Details (optional)</label>
+                            <input type="text" id="details" name="details" placeholder="e.g. Rabies booster" maxlength="60">
+                        </div>
+
+                        <div class="field-row">
+                            <div class="field">
+                                <label for="date">Date</label>
+                                <input type="date" id="date" name="date" required>
+                            </div>
+                            <div class="field">
+                                <label for="time">Time (optional)</label>
+                                <input type="time" id="time" name="time">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-book" id="saveBtn">Save reminder</button>
+
+                        <div class="btn-row">
+                            <button type="button" class="btn-outline" id="doneBtn" hidden>Mark as done</button>
+                            <button type="button" class="btn-outline btn-outline--danger" id="deleteBtn" hidden>Delete reminder</button>
+                            <a href="Reminders.html" class="btn-outline">Back to reminders</a>
+                        </div>
+
+                        <p class="form-message" id="formMessage" role="status"></p>
+                    </form>
+                </article>
+
+                <aside class="side-panel">
+                    <div class="side-card">
+                        <div class="mini-row">
+                            <span class="reminder-icon" id="pvIcon">+</span>
+                            <div class="reminder-info">
+                                <p class="reminder-title" id="pvTitle">Your reminder</p>
+                                <p class="reminder-sub" id="pvSub">Pick a pet, type and date</p>
+                            </div>
+                            <span class="badge badge--ok" id="pvBadge" hidden>Date</span>
+                        </div>
+                    </div>
+
+                    <div class="side-card">
+                        <h3 class="side-title">Reminder types</h3>
+                        <ul class="type-guide" id="typeGuide">
+                            <li data-type="vaccination"><span class="type-icon">+</span><div><strong>Vaccination</strong><span class="hint">Boosters and yearly shots</span></div></li>
+                            <li data-type="medicine"><span class="type-icon">•</span><div><strong>Medicine</strong><span class="hint">Doses, courses and flea treatment</span></div></li>
+                            <li data-type="grooming"><span class="type-icon">✓</span><div><strong>Grooming</strong><span class="hint">Baths, trims and nail clipping</span></div></li>
+                            <li data-type="vet"><span class="type-icon">◷</span><div><strong>Vet visit</strong><span class="hint">Checkups and follow-ups</span></div></li>
+                            <li data-type="other"><span class="type-icon">!</span><div><strong>Other</strong><span class="hint">Anything else worth remembering</span></div></li>
+                        </ul>
+                    </div>
+                </aside>
+                </div>
+
+            </main>
+        </div>
+
+    </div>
+
+    <script src="Reminders.js"></script>
+    <script src="../navbar.js"></script>
+</body>
+</html>
