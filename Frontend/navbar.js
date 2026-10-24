@@ -10,7 +10,7 @@
 (function () {
   "use strict";
 
-  var loginPage = new URL("Login_Signup/login.html", new URL(".", document.currentScript.src));
+  var LOGIN_PAGE = "../Login/Login.html";       // <-- change to your login page
   var ARTICLES_PAGE = "../Articles/Articles.html";
 
   var logout = document.querySelector(".logout-btn");
@@ -18,12 +18,10 @@
     logout.addEventListener("click", function () {
       if (!window.confirm("Log out of PawCare?")) return;
       try {
-        sessionStorage.removeItem("pawfectDemoAuthSession");
-      } catch (error) {
-        window.alert("Unable to end the demo session. Please try again.");
-        return;
-      }
-      window.location.replace(loginPage.href);
+        localStorage.removeItem("token");
+        localStorage.removeItem("pawfect_user_name");
+      } catch (e) {}
+      window.location.href = LOGIN_PAGE;
     });
   }
 
@@ -67,14 +65,10 @@
 
     var desktopQuery = window.matchMedia("(min-width: 1024px)");
     var previousBodyOverflow = "";
-    var isDrawerOpen = false;
 
     function closeDrawer(returnFocus) {
-      if (!isDrawerOpen) return;
-      isDrawerOpen = false;
       drawer.classList.remove("is-open");
       overlay.classList.remove("is-visible");
-      overlay.setAttribute("aria-hidden", "true");
       document.body.classList.remove("nav-drawer-open");
       menuButton.setAttribute("aria-expanded", "false");
       document.body.style.overflow = previousBodyOverflow;
@@ -82,12 +76,9 @@
     }
 
     function openDrawer() {
-      if (isDrawerOpen) return;
-      isDrawerOpen = true;
       previousBodyOverflow = document.body.style.overflow;
       drawer.classList.add("is-open");
       overlay.classList.add("is-visible");
-      overlay.setAttribute("aria-hidden", "false");
       document.body.classList.add("nav-drawer-open");
       document.body.style.overflow = "hidden";
       menuButton.setAttribute("aria-expanded", "true");
@@ -117,10 +108,6 @@
 
     desktopQuery.addEventListener("change", function (event) {
       if (event.matches) closeDrawer(false);
-    });
-
-    window.addEventListener("resize", function () {
-      if (desktopQuery.matches) closeDrawer(false);
     });
   }
 })();
