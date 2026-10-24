@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="login.css">
-    <script src="login.js"></script>
+    <link rel="stylesheet" href="../Pages.css" media="(max-width: 1200px)">
+    <script src="login.js" defer></script>
     <title>Login</title>
 </head>
 <body>
@@ -34,14 +35,14 @@
                 <h1 class="headings">Log in</h1>
                 <p>Welcome back to PawCare</p>
                 
-                <form action="" class="flex-col login-form">
+                <form action="" class="flex-col login-form" id="login-form" novalidate>
                     <div class="flex-col">
                         <label for="email">Email</label>
-                        <input type="email" name="email" id="email">
+                        <input type="email" name="email" id="email" autocomplete="email" required>
                     </div>
                     <div class="flex-col">
                         <label for="password">Password</label>
-                        <input type="password" name="password" id="password">
+                        <input type="password" name="password" id="password" autocomplete="current-password" required>
                     </div>
                     <div class="login-options">
                         <div class="login-options-remember">
@@ -50,7 +51,12 @@
                         </div>
                         <a href="forgot_password.html">Forgot Password</a>
                     </div>
+<<<<<<< HEAD
                     <button class="login-btn">Login</button>
+=======
+                    <p class="auth-message" id="login-message" role="status" aria-live="polite" hidden></p>
+                    <button class="login-btn" type="submit">Login -> </button>
+>>>>>>> 38c194c (Add password recovery files and update login and registration flows)
                     <span style="text-align: center;margin-top: 10px;">New here? <a href="registration.html">Create an account</a></span>
                 </form>
             </div>
