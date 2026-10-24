@@ -135,3 +135,105 @@
   
 
 }
+
+@media (min-width: 1024px) {
+    .navbar-mobile-bar,
+    .navbar-mobile-overlay {
+        display: none;
+    }
+}
+
+@media (max-width: 1023px) {
+    .main-container {
+        grid-template-columns: 1fr;
+        height: auto;
+        min-height: 100dvh;
+        padding-top: 56px;
+    }
+
+    .right {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .left {
+        position: fixed;
+        z-index: 1101;
+        top: 56px;
+        bottom: 0;
+        left: 0;
+        width: min(280px, 85vw);
+        height: auto;
+        overflow-x: hidden;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        transform: translateX(-100%);
+        transition: transform 220ms ease;
+    }
+
+    .left.is-open {
+        transform: translateX(0);
+    }
+
+    .navbar-mobile-bar {
+        position: fixed;
+        z-index: 1103;
+        inset: 0 0 auto;
+        display: flex;
+        align-items: center;
+        height: 56px;
+        padding: 0 6px;
+        background: #f3efed;
+    }
+
+    .navbar-menu-toggle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        width: 44px;
+        height: 44px;
+        padding: 10px;
+        border: 0;
+        border-radius: 8px;
+        background: transparent;
+        color: #8f6b64;
+        cursor: pointer;
+    }
+
+    .navbar-menu-toggle span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        border-radius: 2px;
+        background: currentColor;
+    }
+
+    .navbar-mobile-overlay {
+        position: fixed;
+        z-index: 1100;
+        inset: 56px 0 0;
+        background: rgba(0, 0, 0, 0.48);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 220ms ease, visibility 220ms ease;
+    }
+
+    .navbar-mobile-overlay.is-visible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .navbar-menu-toggle:focus-visible,
+    .left a:focus-visible,
+    .left button:focus-visible,
+    .left-bottom:focus-visible {
+        outline: 3px solid #8f6b64;
+        outline-offset: 3px;
+    }
+
+    body.nav-drawer-open {
+        overscroll-behavior: none;
+    }
+}

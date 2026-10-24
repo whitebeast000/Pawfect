@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Dashboard.css">
+    <link rel="stylesheet" href="DashboardExtra.css">
+    <link rel="stylesheet" href="../decor.css">
+    <link rel="stylesheet" href="../navbar.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <title>Add pet</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="left">
+            
+            <nav class="nav-section">
+                <div class="logo">
+                    <img src="Pawfect_Logo.png" alt="">
+                </div>
+
+                <div class="nav-list">
+                    <ul>
+                        <li class="nav-list-item active"><i class="bi bi-house-fill"></i><a href="Dashboard.html">Dashboard</a></li>
+                        <li class="nav-list-item"><i class="bi bi-heart-fill"></i><a href="../MyPet/MyPet.html">MyPets</a></li>
+                        <li class="nav-list-item"><i class="bi bi-plus-lg"></i><a href="../Health/Health.html">Health</a></li>
+                        <li class="nav-list-item"><i class="bi bi-clock"></i><a href="../Appointments/Appointments.html">Appointments</a></li>
+                        <li class="nav-list-item"><i class="bi bi-check-lg"></i><a href="../DailyCare/DailyCare.html">Daily Care</a></li>
+                        <li class="nav-list-item"><i class="bi bi-dot"></i><a href="../Reminders/Reminders.html">Reminders</a></li>
+                        <li class="nav-list-item"><i class="bi bi-journal-text"></i><a href="../Diary/Diary.html">Diary</a></li>
+                        <li class="nav-list-item"><i class="bi bi-list"></i><a href="../Articles/Articles.html">Articles</a></li>
+                        <li class="nav-list-item"><i class="bi bi-person-circle"></i><a href="../Profile/Profile.html">Profile</a></li>
+                    </ul>
+                </div>
+            </nav>
+            
+            <div>
+                <div class="left-bottom">
+                    <img src="../Images/nav_bottom.jfif" alt="">
+                    <h3 >Need advice?</h3>
+                    <p >Read our per care guide</p>
+                </div>
+                <button class="logout-btn nav-list-item"><i class="bi bi-arrow-right"></i><span>Log out</span></button>
+            </div>
+        
+        </div>
+        
+        <div class="right">
+
+            <main class="main">
+
+                <header class="topbar">
+                    <div>
+                        <h1 class="greeting" id="pageTitle">Add pet</h1>
+                        <p class="greeting-sub" id="pageSub">Tell us about your new furry friend.</p>
+                    </div>
+                </header>
+
+                <div class="form-layout">
+                <article class="card page-narrow" id="formCard">
+                    <h3 class="card-title" id="formTitle">New pet</h3>
+
+                    <form class="book-form" id="petForm" novalidate>
+
+                        <div class="field">
+                            <label for="petName">Pet name</label>
+                            <input type="text" id="petName" name="petName" placeholder="e.g. Max" maxlength="30" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="species">Species</label>
+                            <select id="species" name="species" required>
+                                <option value="" disabled selected>Select species</option>
+                                <option value="Dog">Dog</option>
+                                <option value="Cat">Cat</option>
+                                <option value="Rabbit">Rabbit</option>
+                                <option value="Bird">Bird</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="breed">Breed (optional)</label>
+                            <input type="text" id="breed" name="breed" placeholder="e.g. Golden Retriever" maxlength="40">
+                        </div>
+
+                        <button type="submit" class="btn-book" id="saveBtn">Save pet</button>
+
+                        <div class="btn-row">
+                            <button type="button" class="btn-outline btn-outline--danger" id="deleteBtn" hidden>Delete pet</button>
+                            <a href="Dashboard.html" class="btn-outline" id="backLink">Back to dashboard</a>
+                        </div>
+
+                        <p class="form-message" id="formMessage" role="status"></p>
+                    </form>
+                </article>
+
+                <aside class="side-panel">
+                    <div class="side-card preview-card" id="previewCard">
+                        <div class="preview-band" aria-hidden="true"></div>
+                        <p class="preview-label">Live preview</p>
+
+                        <div class="preview-body">
+                            <span class="preview-avatar" id="previewAvatar" aria-hidden="true">
+                                <span class="preview-paw" id="previewPaw"></span>
+                                <span id="previewEmoji" hidden></span>
+                            </span>
+                            <div class="preview-text">
+                                <p class="preview-name is-empty" id="previewName">Your pet</p>
+                                <div class="preview-chips">
+                                    <span class="pill is-empty" id="previewSpecies">Species</span>
+                                    <span class="pill is-empty" id="previewBreed">Breed</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="preview-foot">
+                            <span class="preview-badge" id="previewBadge">New friend</span>
+                            <span class="preview-date" id="previewDate">Added today</span>
+                        </div>
+                    </div>
+                    <div class="side-art" aria-hidden="true">
+                        <span class="paw paw--1"></span>
+                        <span class="paw paw--2"></span>
+                        <span class="paw paw--3"></span>
+                        <span class="paw paw--4"></span>
+                        <span class="paw paw--5"></span>
+                    </div>
+                    <div class="side-card tip">
+                        <span class="tip-icon" aria-hidden="true"></span>
+                        <div>
+                            <h3>Every pet is unique</h3>
+                            <p>Add your pet’s name and breed now. You can add health records, reminders and visits for them later.</p>
+                        </div>
+                    </div>
+                </aside>
+                </div>
+
+            </main>
+
+        </div>
+
+    </div>
+
+    <script src="../navbar.js"></script>
+    <script src="Dashboard.js"></script>
+</body>
+</html>

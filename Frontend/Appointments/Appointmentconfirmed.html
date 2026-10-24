@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Appointments.css">
+    <link rel="stylesheet" href="../navbar.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <title>Appointment booked</title>
+</head>
+<body data-page="confirmed">
+    <div class="main-container">
+        <div class="left">
+
+            <nav class="nav-section">
+                <div class="logo">
+                    <img src="Pawfect_Logo.png" alt="PawCare logo">
+                </div>
+
+                <div class="nav-list">
+                    <ul>
+                        <li class="nav-list-item"><i class="bi bi-house-fill"></i><a href="../Dashboard/Dashboard.html">Dashboard</a></li>
+                        <li class="nav-list-item"><i class="bi bi-heart-fill"></i><a href="../MyPet/MyPet.html">MyPets</a></li>
+                        <li class="nav-list-item"><i class="bi bi-plus-lg"></i><a href="../Health/Health.html">Health</a></li>
+                        <li class="nav-list-item active"><i class="bi bi-clock"></i><a href="../Appointments/Appointments.html">Appointments</a></li>
+                        <li class="nav-list-item"><i class="bi bi-check-lg"></i><a href="../DailyCare/DailyCare.html">Daily Care</a></li>
+                        <li class="nav-list-item"><i class="bi bi-dot"></i><a href="../Reminders/Reminders.html">Reminders</a></li>
+                        <li class="nav-list-item"><i class="bi bi-journal-text"></i><a href="../Diary/Diary.html">Diary</a></li>
+                        <li class="nav-list-item"><i class="bi bi-list"></i><a href="../Articles/Articles.html">Articles</a></li>
+                        <li class="nav-list-item"><i class="bi bi-person-circle"></i><a href="../Profile/Profile.html">Profile</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div>
+                <div class="left-bottom">
+                    <img src="../Images/nav_bottom.jfif" alt="">
+                    <h3>Need advice?</h3>
+                    <p>Read our pet care guide</p>
+                </div>
+                <button class="logout-btn nav-list-item"><i class="bi bi-arrow-right"></i><span>Log out</span></button>
+            </div>
+
+        </div>
+
+        <div class="right">
+<main class="main">
+
+  <header class="page-head">
+    <h1 class="page-title">Appointment booked</h1>
+    <p class="page-sub">Your visit has been saved. See you soon!</p>
+  </header>
+
+  <article class="card page-narrow">
+    <div class="confirm-icon">✓</div>
+
+    <div class="summary" id="summary">
+      <div class="summary-row"><span>Pet</span><span id="sumPet"></span></div>
+      <div class="summary-row"><span>Veterinarian</span><span id="sumVet"></span></div>
+      <div class="summary-row"><span>Date</span><span id="sumDate"></span></div>
+      <div class="summary-row"><span>Time</span><span id="sumTime"></span></div>
+      <div class="summary-row"><span>Reason</span><span id="sumReason"></span></div>
+    </div>
+
+    <p class="form-message" id="formMessage" role="status"></p>
+
+    <div class="actions" id="actions">
+      <a href="Appointments.html" class="btn-book">View my appointments</a>
+      <div class="btn-row">
+        <a href="Reschedule.html" class="btn-outline" id="rescheduleLink">Reschedule</a>
+        <a href="../Dashboard/Dashboard.html" class="btn-outline">Go to dashboard</a>
+      </div>
+    </div>
+
+    <a href="Appointments.html" class="btn-book" id="backLink" hidden>Back to appointments</a>
+  </article>
+</main>
+        </div>
+
+    </div>
+    <script src="Appointments.js"></script>
+</body>
+</html>

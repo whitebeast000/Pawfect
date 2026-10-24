@@ -3,23 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Reminders.css">
+    <link rel="stylesheet" href="../decor.css">
     <link rel="stylesheet" href="../navbar.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <title>Dashboard</title>
+    <title>Reminders</title>
 </head>
 <body>
     <div class="main-container">
         <div class="left">
-            
+
             <nav class="nav-section">
                 <div class="logo">
-                    <img src="../Images/pawcare-logo.svg" alt="">
+                    <img src="Pawfect_Logo.png" alt="PawCare logo">
                 </div>
 
                 <div class="nav-list">
-                       <ul>
-                        <li class="nav-list-item "><i class="bi bi-house-fill"></i><a href="../Dashboard/Dashboard.html">Dashboard</a></li>
+                    <ul>
+                        <li class="nav-list-item"><i class="bi bi-house-fill"></i><a href="../Dashboard/Dashboard.html">Dashboard</a></li>
                         <li class="nav-list-item"><i class="bi bi-heart-fill"></i><a href="../MyPet/MyPet.html">MyPets</a></li>
                         <li class="nav-list-item"><i class="bi bi-plus-lg"></i><a href="../Health/Health.html">Health</a></li>
                         <li class="nav-list-item"><i class="bi bi-clock"></i><a href="../Appointments/Appointments.html">Appointments</a></li>
@@ -31,30 +35,62 @@
                     </ul>
                 </div>
             </nav>
-            
+
             <div>
                 <div class="left-bottom">
                     <img src="../Images/nav_bottom.jfif" alt="">
-                    <h3 >Need advice?</h3>
-                    <p >Read our per care guide</p>
+                    <h3>Need advice?</h3>
+                    <p>Read our pet care guide</p>
                 </div>
                 <button class="logout-btn nav-list-item"><i class="bi bi-arrow-right"></i><span>Log out</span></button>
             </div>
-        
+
         </div>
 
-
-
-
-        
         <div class="right">
+            <main class="main">
 
-            <main >
-                <h1>saddddd</h1>
+                <header class="topbar">
+                    <div>
+                        <h1 class="page-title">Reminders</h1>
+                        <p class="page-sub">Never miss a meal, dose or appointment.</p>
+                    </div>
+                    <a href="NewReminder.html" class="btn-add">+ New reminder</a>
+                </header>
+
+                <p class="notice" id="notice" role="status" hidden></p>
+
+                <!-- Rows are built by Reminders.js -->
+                <section class="card">
+                    <ul class="reminder-list" id="reminderList"></ul>
+                </section>
+
+                <!-- Shown only when you have reminders marked as done -->
+                <section class="card" id="doneCard" hidden>
+                    <h2 class="card-title">Done</h2>
+                    <ul class="reminder-list" id="doneList"></ul>
+                </section>
+
+                <!-- Next-up banner (numbers come from Reminders.js) -->
+                <section class="remind-banner" id="remindBanner" aria-live="polite">
+                    <div class="bell-row">
+                        <div class="bell" id="bell" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0-6 6v3.2L4.3 15.5A1 1 0 0 0 5.2 17h13.6a1 1 0 0 0 .9-1.5L18 12.2V9a6 6 0 0 0-6-6z"/><path d="M10 19a2 2 0 0 0 4 0"/></svg>
+                        </div>
+                        <div>
+                            <h2 class="banner-title" id="bellTitle">You’re all caught up</h2>
+                            <p class="banner-sub" id="bellSub">Nothing needs your attention right now.</p>
+                            <div class="chip-row" id="bellChips"></div>
+                        </div>
+                    </div>
+                    <div class="pic pic--cat banner-pic" role="img" aria-label="A calm cat"></div>
+                </section>
 
             </main>
         </div>
 
     </div>
+
+    <script src="Reminders.js"></script>
 </body>
 </html>

@@ -2,7 +2,8 @@
    PawCare – Dashboard (main section) styles
    ========================================================= */
 
-:root {        /* change to match your navbar width */
+:root {
+  --sidebar-width: 250px;          /* change to match your navbar width */
 
   --bg: #fbf1ea;
   --card: #fff8f4;
@@ -24,10 +25,9 @@
   --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
-
 /* ---------- Main wrapper ---------- */
 .main {
-  margin-left: var(--sidebar-width);
+  margin-left: 0;
   padding: 32px 44px 48px;
   min-height: 100vh;
   font-family: var(--font-body);
@@ -43,11 +43,9 @@
   box-sizing: border-box;
 }
 
-.main h1,
-.main h2,
-.main h3,
-.main p,
-.main ul {
+/* Reset margins with zero specificity (:where), so class rules such as
+   .hero-title { margin-bottom } and .card-title { margin-bottom } still win. */
+:where(.main) :where(h1, h2, h3, p, ul) {
   margin: 0;
   padding: 0;
 }
@@ -96,7 +94,7 @@
 
 .greeting {
   font-family: var(--font-display);
-  font-size: 44px;
+  font-size: 36px;
   font-weight: 500;
   line-height: 1.1;
   color: var(--brown-dark);
@@ -124,13 +122,13 @@
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 55%;
-  padding: 30px 44px;
+  max-width: 58%;
+  padding: 36px 44px;
 }
 
 .hero-eyebrow {
   margin-bottom: 14px;
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -140,7 +138,7 @@
 .hero-title {
   margin-bottom: 14px;
   font-family: var(--font-display);
-  font-size: 52px;
+  font-size: 40px;
   font-weight: 500;
   line-height: 1.05;
   color: var(--brown-dark);
@@ -148,7 +146,7 @@
 
 .hero-text {
   margin-bottom: 22px;
-  font-size: 15px;
+  font-size: 14px;
   color: var(--brown-text);
 }
 
