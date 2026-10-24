@@ -399,3 +399,127 @@ a.stat-card:focus-visible,
   .task label { gap: 10px; }
   .task-name { overflow-wrap: anywhere; }
 }
+
+@media (max-width: 1200px) {
+  .main,
+  .main > *,
+  .topbar > *,
+  .hero > *,
+  .stats > *,
+  .grid-two > *,
+  .card-head > *,
+  .reminder > *,
+  .pets-row > * {
+    min-width: 0;
+  }
+
+  .stats,
+  .pets-row {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .grid-two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .reminder {
+    min-width: 0;
+  }
+
+  .reminder-info {
+    flex: 1 1 0%;
+    min-width: 0;
+  }
+
+  .reminder-title,
+  .reminder-sub {
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .badge {
+    flex: 0 1 auto;
+    min-width: 0;
+    max-width: 35%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 992px) {
+  .stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .grid-two {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: none;
+  }
+
+  .hero-title {
+    font-size: clamp(1.875rem, 6vw, 2.5rem);
+  }
+
+  .hero-art {
+    position: relative;
+    inset: auto;
+    flex: 0 0 auto;
+    width: 100%;
+    height: 12.5rem;
+  }
+
+  .pets-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .card-head {
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .card-head .card-title {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .card-link {
+    white-space: normal;
+  }
+
+  .main .btn,
+  .main .stat-card,
+  .main .card-link,
+  .main .pet,
+  .main .btn-book,
+  .main .btn-outline,
+  .main button,
+  .main input[type="checkbox"] {
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 400px) {
+  .stats {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .badge {
+    max-width: 32%;
+    padding-inline: 0.5rem;
+  }
+}

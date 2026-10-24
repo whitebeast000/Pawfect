@@ -532,3 +532,105 @@ a.btn-book { display: flex; }
 
   .summary-row { gap: 10px; }
 }
+
+@media (max-width: 1200px) {
+  .appt-grid,
+  .appt-grid > *,
+  .appt-side,
+  .appt-side > *,
+  .appt > *,
+  .appt-actions > *,
+  .field-row > *,
+  .card-head > * {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 1000px) {
+  .appt-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 1023px) {
+  .main a,
+  .main button,
+  .main .btn-book,
+  .main .btn-outline {
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: 1.5rem 1rem 2rem;
+  }
+
+  .page-title {
+    font-size: clamp(1.75rem, 7vw, 2.125rem);
+  }
+
+  .field-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .field input,
+  .field select {
+    font-size: 16px;
+  }
+
+  .appt {
+    display: grid;
+    grid-template-columns: 2.25rem minmax(0, 1fr);
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .appt > .appt-icon {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .appt > .appt-info {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .appt > .btn-outline,
+  .appt > .badge-done,
+  .appt > .appt-actions {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+
+  .appt > .badge-done {
+    justify-self: start;
+    width: fit-content;
+  }
+
+  .appt-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    justify-content: stretch;
+    gap: 0.5rem;
+  }
+
+  .appt-actions > .badge-missed {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+
+  .appt-actions .btn-outline,
+  .appt > .btn-outline {
+    width: 100%;
+    min-width: 0;
+    padding-inline: 0.5rem;
+    text-align: center;
+  }
+
+  .page-narrow {
+    width: 100%;
+    max-width: 100%;
+  }
+}

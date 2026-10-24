@@ -90,12 +90,35 @@ input:focus{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    min-width: 0;
     /* margin: 14px 0; */
 }
-.login-options-remember
+.login-options-remember,
+.login-options > div
 {
     display: flex;
     align-items: center;
+    flex: 0 1 auto;
+    min-width: 0;
+}
+body > main.main-container .login-options > div > input[type="checkbox"] {
+    width: 1rem;
+    min-width: 1rem;
+    height: 1rem;
+    min-height: 1rem;
+    flex: 0 0 1rem;
+    margin: 0 0.4rem 0 0;
+    padding: 0;
+}
+.login-options > div > label {
+    line-height: 1.2;
+    white-space: nowrap;
+}
+.login-options > a {
+    flex: 0 1 auto;
+    max-width: 100%;
 }
 .login-btn , .register-btn{
     background-color:#8E5F56 ;
@@ -104,6 +127,11 @@ input:focus{
     padding: 8px 12px;
     border: none;
 }
+.login-form > .register-btn {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
 
 .login-btn:hover, .register-btn:hover{
     background-color:#ae8a83 ;
@@ -111,4 +139,162 @@ input:focus{
 a{
     color: #8f6b64;
     text-decoration: none;
+}
+
+@media (min-width: 0px) {
+    .otp-boxes {
+        display: flex;
+        justify-content: space-between;
+        gap: clamp(0.35rem, 2vw, 0.75rem);
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+
+    .otp-input {
+        flex: 1 1 0;
+        min-width: 0;
+        max-width: 3.25rem;
+        height: 3.25rem;
+        padding: 0.25rem;
+        color: #8E5F56;
+        font-family: monospace;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .otp-demo-note,
+    .otp-countdown,
+    .otp-back,
+    .otp-dev {
+        font-family: monospace;
+        font-size: 0.85rem;
+        line-height: 1.5;
+        color: #8f6b64;
+    }
+
+    .otp-demo-note {
+        margin-top: 0.25rem;
+    }
+
+    .otp-countdown {
+        text-align: center;
+    }
+
+    .otp-resend,
+    .otp-dev-toggle {
+        padding: 0.5rem 0;
+        color: #8f6b64;
+        font-family: monospace;
+        text-decoration: underline;
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+    }
+
+    .otp-resend:disabled {
+        color: #ae8a83;
+        cursor: not-allowed;
+        text-decoration: none;
+    }
+
+    .otp-dev {
+        padding: 0.75rem;
+        background: rgba(234, 219, 210, 0.45);
+        border-radius: 0.75rem;
+        overflow-wrap: anywhere;
+    }
+
+    .otp-dev p {
+        margin-top: 0.35rem;
+    }
+
+    .auth-message {
+        margin: 0.25rem 0;
+        color: #8E5F56;
+        font-family: monospace;
+        font-size: 0.875rem;
+        line-height: 1.45;
+    }
+
+    .auth-message.is-error {
+        color: #a13f35;
+    }
+}
+
+@media (max-width: 380px) {
+    .otp-boxes {
+        gap: 0.3rem;
+    }
+
+    .otp-input {
+        height: 2.8rem;
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    html,
+    body {
+        width: 100%;
+        min-width: 0;
+    }
+
+    body > main.main-container {
+        width: 100%;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    body > main.main-container > .left,
+    body > main.main-container > .right,
+    body > main.main-container .left-content,
+    body > main.main-container .right-content {
+        min-width: 0;
+    }
+
+    body > main.main-container img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    body > main.main-container :is(h1, p, label, a, span, strong) {
+        overflow-wrap: anywhere;
+    }
+}
+
+@media (max-width: 768px) {
+    body > main.main-container > .right {
+        padding: clamp(1rem, 4vw, 1.5rem);
+    }
+
+    body > main.main-container .login-form,
+    body > main.main-container .otp-dev,
+    body > main.main-container .otp-boxes {
+        width: 100%;
+        min-width: 0;
+    }
+
+    body > main.main-container .otp-boxes {
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 380px) {
+    body > main.main-container .otp-boxes {
+        gap: 0.3rem;
+    }
+
+    body > main.main-container .otp-boxes > .otp-input {
+        flex: 1 1 0;
+        width: calc((100% - 1.5rem) / 6);
+        max-width: none;
+        min-width: 0;
+    }
+}
+
+@media (max-height: 700px) {
+    body > main.main-container {
+        height: auto;
+        min-height: 100vh;
+    }
 }
