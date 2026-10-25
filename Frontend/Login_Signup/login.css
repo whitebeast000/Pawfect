@@ -35,6 +35,14 @@ input,label, span,a ,button{
     
     background-color: #EADBD2;
 }
+
+.logo{
+    width: 50%;
+}
+.logo>img{
+    width: 100%;
+}
+
 .left-content{
     width: 75%;
     gap: 30px;
@@ -55,6 +63,22 @@ input,label, span,a ,button{
     text-align: right;
     width: 25%;
     transform: rotate(-20deg);
+}
+
+
+
+.main_image{
+    width: 50%;
+    align-self:flex-end;
+
+}
+
+.main_image img{
+    width: 100%;
+    /* overflow: hidden; */
+    object-fit: cover;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
 }
 
 .right
@@ -124,7 +148,7 @@ body > main.main-container .login-options > div > input[type="checkbox"] {
     background-color:#8E5F56 ;
     border-radius: 20px;
     color: white;
-    padding: 8px 12px;
+    padding: 10px 14px;
     border: none;
 }
 .login-form > .register-btn {
@@ -140,161 +164,181 @@ a{
     color: #8f6b64;
     text-decoration: none;
 }
+/* ================================
+RESPONSIVE DESIGN
+Desktop appearance remains unchanged
+================================ */
 
-@media (min-width: 0px) {
-    .otp-boxes {
-        display: flex;
-        justify-content: space-between;
-        gap: clamp(0.35rem, 2vw, 0.75rem);
-        width: 100%;
-        margin-top: 0.5rem;
-    }
-
-    .otp-input {
-        flex: 1 1 0;
-        min-width: 0;
-        max-width: 3.25rem;
-        height: 3.25rem;
-        padding: 0.25rem;
-        color: #8E5F56;
-        font-family: monospace;
-        font-size: 1.5rem;
-        text-align: center;
-    }
-
-    .otp-demo-note,
-    .otp-countdown,
-    .otp-back,
-    .otp-dev {
-        font-family: monospace;
-        font-size: 0.85rem;
-        line-height: 1.5;
-        color: #8f6b64;
-    }
-
-    .otp-demo-note {
-        margin-top: 0.25rem;
-    }
-
-    .otp-countdown {
-        text-align: center;
-    }
-
-    .otp-resend,
-    .otp-dev-toggle {
-        padding: 0.5rem 0;
-        color: #8f6b64;
-        font-family: monospace;
-        text-decoration: underline;
-        background: transparent;
-        border: 0;
-        cursor: pointer;
-    }
-
-    .otp-resend:disabled {
-        color: #ae8a83;
-        cursor: not-allowed;
-        text-decoration: none;
-    }
-
-    .otp-dev {
-        padding: 0.75rem;
-        background: rgba(234, 219, 210, 0.45);
-        border-radius: 0.75rem;
-        overflow-wrap: anywhere;
-    }
-
-    .otp-dev p {
-        margin-top: 0.35rem;
-    }
-
-    .auth-message {
-        margin: 0.25rem 0;
-        color: #8E5F56;
-        font-family: monospace;
-        font-size: 0.875rem;
-        line-height: 1.45;
-    }
-
-    .auth-message.is-error {
-        color: #a13f35;
-    }
+/* Tablets and smaller laptops */
+@media (max-width: 1024px) {
+.left-content {
+width: 82%;
 }
 
-@media (max-width: 380px) {
-    .otp-boxes {
-        gap: 0.3rem;
-    }
-
-    .otp-input {
-        height: 2.8rem;
-        font-size: 1.25rem;
-    }
+.right-content {
+    width: 75%;
 }
 
-@media (max-width: 1200px) {
-    html,
-    body {
-        width: 100%;
-        min-width: 0;
-    }
-
-    body > main.main-container {
-        width: 100%;
-        height: auto;
-        min-height: 100vh;
-    }
-
-    body > main.main-container > .left,
-    body > main.main-container > .right,
-    body > main.main-container .left-content,
-    body > main.main-container .right-content {
-        min-width: 0;
-    }
-
-    body > main.main-container img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    body > main.main-container :is(h1, p, label, a, span, strong) {
-        overflow-wrap: anywhere;
-    }
+.logo {
+    width: 60%;
 }
 
+.main_image {
+    width: 60%;
+}
+
+
+}
+
+/* Tablets and mobile screens */
 @media (max-width: 768px) {
-    body > main.main-container > .right {
-        padding: clamp(1rem, 4vw, 1.5rem);
-    }
-
-    body > main.main-container .login-form,
-    body > main.main-container .otp-dev,
-    body > main.main-container .otp-boxes {
-        width: 100%;
-        min-width: 0;
-    }
-
-    body > main.main-container .otp-boxes {
-        justify-content: space-between;
-    }
+.main-container {
+flex-direction: column;
+height: auto;
+min-height: 100vh;
 }
 
-@media (max-width: 380px) {
-    body > main.main-container .otp-boxes {
-        gap: 0.3rem;
-    }
 
-    body > main.main-container .otp-boxes > .otp-input {
-        flex: 1 1 0;
-        width: calc((100% - 1.5rem) / 6);
-        max-width: none;
-        min-width: 0;
-    }
+.left,
+.right {
+    width: 100%;
+    flex: none;
+    min-width: 0;
 }
 
-@media (max-height: 700px) {
-    body > main.main-container {
-        height: auto;
-        min-height: 100vh;
-    }
+.left {
+    padding: 35px 24px;
+}
+
+.left-content {
+    width: 100%;
+    max-width: 520px;
+    gap: 22px;
+}
+
+.logo {
+    width: 55%;
+    max-width: 240px;
+}
+
+.ex-info > p {
+    width: auto;
+    max-width: 180px;
+}
+
+.main_image {
+    width: 45%;
+    max-width: 220px;
+}
+
+.right {
+    padding: 45px 24px;
+}
+
+.right-content {
+    width: 100%;
+    max-width: 480px;
+}
+
+input:not([type="checkbox"]) {
+    width: 100%;
+    min-width: 0;
+}
+
+
+}
+
+/* Small mobile screens */
+@media (max-width: 480px) {
+.left {
+padding: 28px 20px;
+}
+
+.left-content {
+    gap: 18px;
+}
+
+.logo {
+    width: 65%;
+    max-width: 210px;
+}
+
+.main_image {
+    width: 55%;
+    max-width: 190px;
+}
+
+.right {
+    padding: 35px 20px;
+}
+
+.right-content {
+    width: 100%;
+}
+
+.login-options {
+    gap: 12px;
+}
+
+.login-options > a {
+    white-space: normal;
+}
+
+.headings {
+    overflow-wrap: break-word;
+}
+
+}
+
+/* Extra-small mobile screens */
+@media (max-width: 360px) {
+.left {
+padding: 24px 16px;
+}
+
+
+.right {
+    padding: 30px 16px;
+}
+
+.logo {
+    width: 70%;
+}
+
+.main_image {
+    width: 60%;
+}
+
+.login-options {
+    align-items: flex-start;
+}
+
+.login-options-remember label {
+    white-space: normal;
+}
+
+.otp-boxes {
+    gap: 5px;
+}
+
+.otp-input {
+    min-width: 0;
+}
+
+}
+
+/* Short screens: allow content to fit naturally */
+@media (max-height: 700px) and (min-width: 769px) {
+.left,
+.right {
+padding-top: 25px;
+padding-bottom: 25px;
+}
+
+
+.left-content {
+    gap: 20px;
+}
+
+
 }
