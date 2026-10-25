@@ -144,12 +144,16 @@ body > main.main-container .login-options > div > input[type="checkbox"] {
     flex: 0 1 auto;
     max-width: 100%;
 }
-.login-btn , .register-btn{
+.login-btn , .register-btn,.otp-resend-btn{
     background-color:#8E5F56 ;
     border-radius: 20px;
     color: white;
     padding: 10px 14px;
     border: none;
+}
+
+.otp-resend-btn{
+    background-color: #EADBD2;
 }
 .login-form > .register-btn {
     width: 100%;
@@ -319,6 +323,9 @@ padding: 24px 16px;
 
 .otp-boxes {
     gap: 5px;
+}
+.otp-boxes >.otp-input{
+    width: 20%;
 }
 
 .otp-input {
