@@ -1,0 +1,249 @@
+.health-page {
+    width: 100%;
+    padding: 28px 34px 32px;
+    color: #633b32;
+    font-family: "Inter", sans-serif;
+    box-sizing: border-box;
+}
+
+.health-page *,
+.health-page *::before,
+.health-page *::after {
+    box-sizing: border-box;
+}
+
+
+.health-heading {
+    margin: 0 0 20px;
+}
+
+.health-heading h1 {
+    margin: 0;
+    color: #633b32;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(36px, 3.5vw, 48px);
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+.health-heading p {
+    margin: 6px 0 0;
+    color: #9a786c;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+
+.health-banner {
+    position: relative;
+    width: 100%;
+    height: 340px;
+    margin: 0 0 24px;
+    overflow: hidden;
+    border-radius: 18px;
+    background: #efd1c5;
+}
+
+.health-banner > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+.health-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    align-items: stretch;
+}
+
+.health-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 490px;
+    padding: 22px 28px 26px;
+    overflow: hidden;
+    border: 1px solid #f0dfd5;
+    border-radius: 18px;
+    background: #fff9f4;
+    box-shadow: 0 8px 24px rgba(105, 65, 52, 0.04);
+}
+
+
+.health-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #f2ddd4;
+    color: #70463b;
+    font-size: 32px;
+}
+
+
+.health-card h2 {
+    position: relative;
+    z-index: 1;
+    margin: 12px 0 10px;
+    color: #633b32;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(28px, 2.4vw, 36px);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+
+.health-card > p {
+    position: relative;
+    z-index: 1;
+    max-width: 310px;
+    margin: 0;
+    color: #9a786c;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+
+.health-card-image {
+    display: block;
+    width: 100%;
+    height: 205px;
+    margin: 8px auto 14px;
+    object-fit: contain;
+    object-position: center;
+}
+
+
+.health-button {
+    display: block;
+    width: min(100%, 300px);
+    margin: auto auto 0;
+    padding: 14px 18px;
+    border: none;
+    border-radius: 30px;
+    background: #956157;
+    color: #fffaf6;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.health-button:hover {
+    background: #75483f;
+}
+
+.health-button:focus-visible {
+    outline: 2px solid #633b32;
+    outline-offset: 3px;
+}
+
+
+@media (max-width: 1100px) {
+    .health-page {
+        padding: 24px;
+    }
+
+    .health-banner {
+        height: 290px;
+    }
+
+    .health-card {
+        padding: 22px;
+    }
+
+    .health-card h2 {
+        font-size: 30px;
+    }
+
+    .health-card-image {
+        height: 180px;
+    }
+}
+
+@media (max-width: 760px) {
+    .health-page {
+        padding: 20px 16px 28px;
+    }
+
+    .health-heading h1 {
+        font-size: 38px;
+    }
+
+    .health-banner {
+        height: 230px;
+        margin-bottom: 18px;
+    }
+
+    .health-cards {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .health-card {
+        min-height: 450px;
+        padding: 22px;
+    }
+
+    .health-card h2 {
+        font-size: 32px;
+    }
+
+    .health-card-image {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .health-heading h1 {
+        font-size: 34px;
+    }
+
+    .health-heading p {
+        font-size: 14px;
+    }
+
+    .health-banner {
+        height: 190px;
+        border-radius: 14px;
+    }
+
+    .health-card {
+        min-height: 420px;
+        padding: 18px;
+    }
+
+    .health-icon {
+        width: 62px;
+        height: 62px;
+        font-size: 28px;
+    }
+
+    .health-card h2 {
+        font-size: 29px;
+    }
+
+    .health-card > p {
+        font-size: 14px;
+    }
+
+    .health-card-image {
+        height: 175px;
+    }
+}

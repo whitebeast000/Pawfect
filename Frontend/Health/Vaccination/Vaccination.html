@@ -1,124 +1,198 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Vaccination.css">
-    <link rel="stylesheet" href="../../navbar.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <script src="../navbar.js" defer></script>
 
-    <title>Dashboard</title>
+    <title>Vaccination Records - Pawfect</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../navbar.css">
+    <link rel="stylesheet" href="Vaccination.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <script src="../../navbar.js" defer></script>
+    <script src="Vaccination.js" defer></script>
 </head>
 <body>
     <div class="main-container">
         <div class="left">
-            
             <nav class="nav-section">
                 <div class="logo">
-                    <img src="Pawfect_Logo.png" alt="">
+                    <img src="Pawfect_Logo.png" alt="Pawfect logo">
                 </div>
 
                 <div class="nav-list">
-                       <ul>
-                        <li class="nav-list-item "><i class="bi bi-house-fill"></i><a href="Dashboard.html">Dashboard</a></li>
-                        <li class="nav-list-item"><i class="bi bi-heart-fill"></i><a href="../MyPet/MyPet.html">MyPets</a></li>
-                        <li class="nav-list-item active"><i class="bi bi-plus-lg"></i><a href="../Health/Health.html">Health</a></li>
-                        <li class="nav-list-item"><i class="bi bi-clock"></i><a href="../Appointments/Appointments.html">Appointments</a></li>
-                        <li class="nav-list-item"><i class="bi bi-check-lg"></i><a href="../DailyCare/DailyCare.html">Daily Care</a></li>
-                        <li class="nav-list-item"><i class="bi bi-dot"></i><a href="../Reminders/Reminders.html">Reminders</a></li>
-                        <li class="nav-list-item"><i class="bi bi-journal-text"></i><a href="../Diary/Diary.html">Diary</a></li>
-                        <li class="nav-list-item"><i class="bi bi-list"></i><a href="../Articles/Articles.html">Articles</a></li>
-                        <li class="nav-list-item "><i class="bi bi-person-circle"></i><a href="../Profile/Profile.html">Profile</a></li>
+                    <ul>
+                        <li class="nav-list-item">
+                            <i class="bi bi-house-fill"></i>
+                            <a href="../../Dashboard/Dashboard.html">Dashboard</a>
+                        </li>
+                        <li class="nav-list-item">
+                            <i class="bi bi-heart-fill"></i>
+                            <a href="../../MyPet/MyPet.html">MyPets</a>
+                        </li>
+                        <li class="nav-list-item active">
+                            <i class="bi bi-plus-lg"></i>
+                            <a href="../Health.html">Health</a>
+                        </li>
+                        <li class="nav-list-item">
+                            <i class="bi bi-clock"></i>
+                            <a href="../../Appointments/Appointments.html">Appointments</a>
+                        </li>
+                        <li class="nav-list-item">
+                            <i class="bi bi-check-lg"></i>
+                            <a href="../../DailyCare/DailyCare.html">Daily Care</a>
+                        </li>
+                        <li class="nav-list-item">
+                            <i class="bi bi-dot"></i>
+                            <a href="../../Reminders/Reminders.html">Reminders</a>
+                        </li>
+                        <li class="nav-list-item">
+                            <i class="bi bi-journal-text"></i>
+                            <a href="../../Diary/Diary.html">Diary</a>
+                        </li>
+                        <li class="nav-list-item">
+                            <i class="bi bi-list"></i>
+                            <a href="../../Articles/Articles.html">Articles</a>
+                        </li>
+                        <li class="nav-list-item">
+                            <i class="bi bi-person-circle"></i>
+                            <a href="../../Profile/Profile.html">Profile</a>
+                        </li>
                     </ul>
                 </div>
             </nav>
-            
+
             <div>
                 <div class="left-bottom">
-                    <img src="../Images/nav_bottom.jfif" alt="">
-                    <h3 >Need advice?</h3>
-                    <p >Read our per care guide</p>
+                    <img src="../../Images/nav_bottom.jfif" alt="">
+                    <h3>Need advice?</h3>
+                    <p>Read our pet care guide</p>
                 </div>
-                <button class="logout-btn nav-list-item"><i class="bi bi-arrow-right"></i><span>Log out</span></button>
+
+                <button class="logout-btn nav-list-item">
+                    <i class="bi bi-arrow-right"></i>
+                    <span>Log out</span>
+                </button>
             </div>
-        
         </div>
+
         <div class="right">
+            <main class="vaccination-page">
 
-          
-                <!-- Put these in <head> (once) -->
-<!--
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="main-section.css">
--->
+                <header class="vaccination-heading">
+                    <div>
+                        <h1>Vaccination records</h1>
+                        <p>Keep every shot up to date.</p>
+                    </div>
 
-<!-- Put this inside your <div class="right"> -->
-<main class="main" id="mainContent">
+                    <button
+                        type="button"
+                        class="add-vaccine-btn"
+                        id="openVaccineForm">
+                        + Add vaccination
+                    </button>
+                </header>
 
-  <header class="page-header" id="pageHeader">
-    <div class="page-heading">
-      <h1 class="page-title" id="pageTitle">Vaccination records</h1>
-      <p class="page-subtitle" id="pageSubtitle">Keep every shot up to date.</p>
-    </div>
-    <button type="button" class="btn-add" id="addVaccinationBtn">+ Add vaccination</button>
-  </header>
+                <section class="vaccine-panel">
 
-  <section class="vax-card" id="vaccinationCard">
+                    <div class="pet-tabs" role="tablist" aria-label="Choose a pet">
+                        <button type="button" class="pet-tab active"
+                            data-pet="Max" role="tab" aria-selected="true">
+                            Max
+                        </button>
 
-    <!-- Pet tabs (render from API: one button per pet) -->
-    <div class="pet-tabs" id="petTabs" role="tablist">
-      <button type="button" class="pet-tab active" id="petTab-1" data-pet-id="1" role="tab" aria-selected="true">Max</button>
-      <button type="button" class="pet-tab" id="petTab-2" data-pet-id="2" role="tab" aria-selected="false">Luna</button>
-      <button type="button" class="pet-tab" id="petTab-3" data-pet-id="3" role="tab" aria-selected="false">Coco</button>
-    </div>
+                        <button type="button" class="pet-tab"
+                            data-pet="Luna" role="tab" aria-selected="false">
+                            Luna
+                        </button>
 
-    <table class="vax-table" id="vaccinationTable">
-      <thead>
-        <tr id="vaccinationTableHeadRow">
-          <th id="thVaccine">Vaccine</th>
-          <th id="thGiven">Given</th>
-          <th id="thNextDue">Next due</th>
-          <th id="thStatus">Status</th>
-        </tr>
-      </thead>
+                        <button type="button" class="pet-tab"
+                            data-pet="Coco" role="tab" aria-selected="false">
+                            Coco
+                        </button>
+                    </div>
 
-      <!-- Rows from API: ids use the vaccination id -->
-      <tbody id="vaccinationTableBody">
-        <tr id="vaccinationRow-1" data-vaccination-id="1">
-          <td class="vax-name" id="vaccineName-1">Rabies</td>
-          <td id="givenDate-1">12/10/25</td>
-          <td id="nextDueDate-1">12/10/26</td>
-          <td><span class="badge badge-due-soon" id="vaccineStatus-1">Due soon</span></td>
-        </tr>
-        <tr id="vaccinationRow-2" data-vaccination-id="2">
-          <td class="vax-name" id="vaccineName-2">Distemper</td>
-          <td id="givenDate-2">15/11/24</td>
-          <td id="nextDueDate-2">15/11/25</td>
-          <td><span class="badge badge-overdue" id="vaccineStatus-2">Overdue</span></td>
-        </tr>
-        <tr id="vaccinationRow-3" data-vaccination-id="3">
-          <td class="vax-name" id="vaccineName-3">Parvovirus</td>
-          <td id="givenDate-3">20/12/25</td>
-          <td id="nextDueDate-3">20/12/26</td>
-          <td><span class="badge badge-up-to-date" id="vaccineStatus-3">Up to date</span></td>
-        </tr>
-        <tr id="vaccinationRow-4" data-vaccination-id="4">
-          <td class="vax-name" id="vaccineName-4">Bordetella</td>
-          <td id="givenDate-4">02/03/26</td>
-          <td id="nextDueDate-4">02/03/27</td>
-          <td><span class="badge badge-up-to-date" id="vaccineStatus-4">Up to date</span></td>
-        </tr>
-      </tbody>
-    </table>
+                    <div class="table-wrapper">
+                        <table class="vaccine-table">
+                            <thead>
+                                <tr>
+                                    <th>Vaccine</th>
+                                    <th>Given</th>
+                                    <th>Next due</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="vaccineTableBody"></tbody>
+                        </table>
+                    </div>
+                </section>
 
-  </section>
-</main>
-
+            </main>
         </div>
-
     </div>
+
+    <div class="vaccine-modal-backdrop" id="vaccineModalBackdrop" hidden></div>
+
+    <section
+        class="vaccine-form-panel"
+        id="vaccineFormPanel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="vaccineFormTitle"
+        hidden>
+
+        <button
+            type="button"
+            class="modal-close"
+            id="closeVaccineForm"
+            aria-label="Close form">
+            &times;
+        </button>
+
+        <h2 id="vaccineFormTitle">Add vaccination</h2>
+        <p class="modal-description">Enter your pet's vaccination details.</p>
+
+        <form id="vaccineForm">
+
+            <label for="petName">Pet</label>
+            <select id="petName" required>
+                <option value="Max">Max</option>
+                <option value="Luna">Luna</option>
+                <option value="Coco">Coco</option>
+            </select>
+
+            <label for="vaccineName">Vaccine name</label>
+            <input
+                id="vaccineName"
+                type="text"
+                placeholder="e.g. Rabies"
+                required>
+
+            <label for="givenDate">Date given</label>
+            <input id="givenDate" type="date" required>
+
+            <label for="dueDate">Next due date</label>
+            <input id="dueDate" type="date" required>
+
+            <div class="form-actions">
+                <button type="submit" class="add-vaccine-btn">
+                    Save record
+                </button>
+
+                <button
+                    type="button"
+                    class="cancel-vaccine-btn"
+                    id="cancelVaccineForm">
+                    Cancel
+                </button>
+            </div>
+        </form>
+    </section>
 </body>
 </html>
