@@ -190,6 +190,9 @@
         height: 230px;
         margin-bottom: 18px;
     }
+    .health-banner> img{
+        object-fit: fill;
+    }
 
     .health-cards {
         grid-template-columns: 1fr;

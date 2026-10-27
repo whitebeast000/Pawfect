@@ -343,3 +343,62 @@
         width: 100%;
     }
 }
+@media (max-width: 640px) {
+
+  /* Less padding around the card so the table gets more room */
+  .vaccine-card {            /* the white card; rename to your class */
+    padding: 16px 12px;
+    border-radius: 24px;
+  }
+
+  /* Remove any forced width and the scroll */
+  .table-wrapper {           /* your wrapper (class starts with "table-w") */
+    overflow-x: visible;
+  }
+
+  .vaccine-table {
+    width: 100%;
+    min-width: 0;            /* cancels any min-width from desktop */
+    table-layout: fixed;     /* equal columns that fit the card */
+  }
+
+  /* Headers: smaller, tighter */
+  .vaccine-table th {
+    font-size: 10px;
+    letter-spacing: .05em;
+    padding: 10px 4px;
+  }
+
+  /* Cells: smaller text and padding, allow wrapping */
+  .vaccine-table td {
+    font-size: 13px;
+    padding: 16px 4px;
+    word-break: break-word;
+  }
+
+  .vaccine-table td:first-child {
+    font-size: 14px;
+  }
+
+  /* Smaller status pill */
+  .vaccine-table .badge,     /* rename to your status pill class */
+  .vaccine-table .status {
+    font-size: 11px;
+    padding: 6px 10px;
+    white-space: nowrap;
+  }
+
+  /* Pet tabs a bit smaller too */
+  .pet-tab {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+}
+
+/* Very small phones (e.g. 360px and under) */
+@media (max-width: 380px) {
+  .vaccine-table th { font-size: 9px; letter-spacing: 0; }
+  .vaccine-table td { font-size: 12px; }
+  .vaccine-table .badge,
+  .vaccine-table .status { font-size: 10px; padding: 5px 8px; }
+}
