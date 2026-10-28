@@ -783,20 +783,20 @@
   }
 
   body > main.main-container > .left {
-    display: none;
+    display: flex;
   }
 
   body > main.main-container > .right {
     flex: 1 1 auto;
     width: 100%;
     min-width: 0;
-    min-height: 100dvh;
-    padding: 1rem;
+    min-height: 0;
+    padding: clamp(1.25rem, 5vw, 2rem);
   }
 
   body > main.main-container > .right .right-content {
     width: 100%;
-    max-width: 100%;
+    max-width: 32rem;
   }
 
   body > main.main-container input:not([type="checkbox"]) {
@@ -1035,3 +1035,178 @@
     font-size: clamp(1.75rem, 8vw, 2rem);
   }
 }
+
+
+/* ==========================================
+LOGIN / SIGNUP RESPONSIVE FIX
+Preserve the existing desktop appearance
+========================================== */
+
+/* Tablets */
+@media (max-width: 768px) {
+
+
+body > main.main-container {
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    min-height: 100vh;
+}
+
+/* LEFT SECTION */
+body > main.main-container > .left {
+    flex: none;
+    width: 100%;
+    min-width: 0;
+    padding: 35px 30px;
+}
+
+body > main.main-container .left-content {
+    width: 100%;
+    max-width: 520px;
+    min-width: 0;
+    gap: 22px;
+}
+
+body > main.main-container .logo {
+    width: 50%;
+    max-width: 240px;
+}
+
+body > main.main-container .left-content > .headings {
+    font-size: clamp(28px, 5vw, 36px);
+}
+
+body > main.main-container .ex-info {
+    width: 100%;
+}
+
+body > main.main-container .ex-info > p {
+    width: auto;
+    max-width: 180px;
+}
+
+body > main.main-container .main_image {
+    width: 45%;
+    max-width: 230px;
+    align-self: flex-end;
+}
+
+/* RIGHT SECTION */
+body > main.main-container > .right {
+    flex: none;
+    width: 100%;
+    min-width: 0;
+    padding: 40px 30px;
+}
+
+body > main.main-container .right-content {
+    width: 100%;
+    max-width: 480px;
+    min-width: 0;
+}
+
+body > main.main-container .login-form {
+    width: 100%;
+    min-width: 0;
+}
+
+body > main.main-container .login-form > div {
+    min-width: 0;
+}
+
+body > main.main-container .login-form input:not([type="checkbox"]) {
+    width: 100%;
+    min-width: 0;
+}
+
+
+}
+
+/* SMALL MOBILE PHONES */
+@media (max-width: 480px) {
+
+
+body > main.main-container > .left {
+    padding: 28px 20px;
+}
+
+body > main.main-container .left-content {
+    gap: 18px;
+}
+
+body > main.main-container .logo {
+    width: 65%;
+    max-width: 210px;
+}
+
+body > main.main-container .main_image {
+    width: 55%;
+    max-width: 190px;
+}
+
+body > main.main-container .left-content > p {
+    overflow-wrap: break-word;
+}
+
+body > main.main-container .right {
+    padding: 32px 20px;
+}
+
+body > main.main-container .right-content {
+    gap: 12px;
+}
+
+body > main.main-container .login-options {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+body > main.main-container .login-options > a {
+    white-space: normal;
+}
+
+body > main.main-container .login-form > span {
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+
+}
+
+/* EXTRA-SMALL PHONES */
+@media (max-width: 360px) {
+
+
+body > main.main-container > .left {
+    padding: 24px 16px;
+}
+
+body > main.main-container > .right {
+    padding: 28px 16px;
+}
+
+body > main.main-container .logo {
+    width: 75%;
+}
+
+body > main.main-container .main_image {
+    width: 65%;
+}
+
+body > main.main-container .login-options {
+    justify-content: flex-start;
+}
+
+
+}
+
+@media (max-width: 768px) {
+body > main.main-container > .right {
+background-color: #F7F2EE;
+flex: 1 0 auto;
+height: 100vh;
+}
+}
+

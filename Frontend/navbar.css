@@ -59,6 +59,11 @@
 {
     background-color:#EADBD2 ;
 }
+/* .nav-list >ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+} */
 .nav-list >ul >li
 {
     display: flex;
@@ -66,6 +71,7 @@
     gap: 12px;
     padding: 2px 10px;
     border-radius: 12px;
+    margin: 4px 0px;
 }
 .nav-list-item, .left-bottom>p , .left-bottom>h3{
     font-family: Arial, Helvetica, sans-serif;

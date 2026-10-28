@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="../Pages.css" media="(max-width: 1200px)">
+    <link rel="stylesheet" href="otp.css">
     <script src="otp.js" defer></script>
     <title>Verify your email</title>
 </head>
@@ -12,17 +13,16 @@
     <main class="main-container otp-container">
         <div class="left">
             <div class="left-content flex-col">
-                <div class="logo-container">
-                    <img src="../Images/pawcare-logo.svg" alt="" width="100">
-                    <div>
-                        <h1 class="headings">Paw<span>fect</span></h1>
-                        <p>Pet Care &amp; Wellness</p>
+                <div class="logo">
+                        <img src="Pawfect_Logo.png" alt="">
                     </div>
-                </div>
                 <p class="handwritten-line">Healthier pets. Happier lives.</p>
                 <h1 class="headings">One last step</h1>
                 <p>Verify your email to finish creating your Pawfect demo account.</p>
                 <div class="ex-info"><p class="handwritten-line">Happy pets make happy homes</p></div>
+                <div class="main_image">
+                             <img src="../Images/mainImage.jfif" alt="" >
+                         </div>
             </div>
         </div>
         <div class="right flex-col">
@@ -45,7 +45,7 @@
                     <button class="login-btn" type="submit" id="verify-button">Verify code</button>
                 </form>
 
-                <button class="otp-resend" type="button" id="resend-button" disabled>Resend OTP</button>
+                <button class="otp-resend otp-resend-btn" type="button" id="resend-button" disabled>Resend OTP</button>
 
                 <div class="otp-dev">
                     <button class="otp-dev-toggle" type="button" id="show-code-button" aria-expanded="false" aria-controls="dev-code">
