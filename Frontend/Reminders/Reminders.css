@@ -359,6 +359,7 @@
 
 .banner-pic > img {
   border-radius: 20px;
+  width: 100%;
 }
 
 /* ---------- Responsive ---------- */
