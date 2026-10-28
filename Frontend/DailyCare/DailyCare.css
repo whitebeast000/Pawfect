@@ -389,6 +389,11 @@
 
 .form-message.is-error { color: var(--red); }
 
+.banner-pic > img {
+  border-radius: 20px;
+}
+
+
 /* ---------- Responsive ---------- */
 @media (max-width: 1100px) {
   .care-grid { grid-template-columns: repeat(2, 1fr); }
