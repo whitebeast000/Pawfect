@@ -478,10 +478,98 @@
         new Date().toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
       if (editing) $("previewBadge").textContent = "Saved pet";
     }
+    // Care basics card: changes with the chosen species (general guidance only)
+    var CARE_DEFAULT = [
+      ["Food", "Fresh water every day and food that suits your pet’s age and size."],
+      ["Exercise", "Daily movement and play keep every pet healthy and happy."],
+      ["Grooming", "Regular brushing and a quick check of nails, ears and teeth."],
+      ["Vet visits", "A yearly checkup, plus vaccines as your vet advises."]
+    ];
+    var CARE = {
+      Dog: [
+        ["Food", "Measured meals, usually twice a day, with fresh water always available."],
+        ["Exercise", "Daily walks and playtime keep dogs fit, calm and well behaved."],
+        ["Grooming", "Brush regularly, and check nails and ears every few weeks."],
+        ["Vet visits", "Yearly checkups, plus vaccine boosters as your vet advises."]
+      ],
+      Cat: [
+        ["Food", "Complete cat food and fresh water, kept away from the litter tray."],
+        ["Exercise", "Short daily play sessions keep indoor cats active and happy."],
+        ["Grooming", "Brush weekly, and daily for long coats such as Persians."],
+        ["Vet visits", "Yearly checkups, plus vaccine boosters as your vet advises."]
+      ],
+      Rabbit: [
+        ["Food", "Fresh hay should make up most of the diet, with leafy greens daily."],
+        ["Exercise", "Needs space to run and jump for several hours every day."],
+        ["Grooming", "Brush during shedding, and check teeth and nails regularly."],
+        ["Vet visits", "Yearly checkups. See a vet quickly if a rabbit stops eating."]
+      ],
+      Bird: [
+        ["Food", "A varied diet of pellets or seed, fresh vegetables and clean water."],
+        ["Exercise", "Needs safe time out of the cage and toys to keep busy."],
+        ["Grooming", "Offer a shallow bath or a gentle mist, and keep the cage clean."],
+        ["Vet visits", "Yearly checkups with a vet who knows birds."]
+      ],
+      Other: CARE_DEFAULT
+    };
+
+    function renderCare(sp, animate) {
+      var list = $("petCareList");
+      if (!list) return;
+      var rows = CARE[sp] || CARE_DEFAULT;
+      $("careTitle").textContent = sp ? (sp === "Other" ? "Care basics for your pet" : "Caring for a " + sp.toLowerCase())
+                                      : "Care basics for every pet";
+      var emoji = $("careEmoji");
+      emoji.textContent = SPECIES_EMOJI[sp] || "";
+      emoji.hidden = !sp;
+      $("carePaw").hidden = !!sp;
+
+      list.innerHTML = "";
+      rows.forEach(function (r) {
+        var li = el("li");
+        li.appendChild(el("span", "care-k", r[0]));
+        li.appendChild(el("span", "care-v", r[1]));
+        list.appendChild(li);
+      });
+      if (animate) {
+        list.classList.remove("is-new");
+        void list.offsetWidth;                 // restart the fade-in
+        list.classList.add("is-new");
+      }
+    }
+
+    // "Your pets so far" next to the next-steps cards
+    function renderPetsSoFar() {
+      var box = $("nextPets");
+      if (!box) return;
+      var pets = getPets();
+      var count = $("nextCount");
+      if (editing) {
+        count.textContent = "You are editing " + editing.name + ". Here is what you can do next.";
+      } else if (!pets.length) {
+        count.textContent = "This will be your first pet. Here is what you can do next.";
+      } else {
+        count.textContent = "You have " + plural(pets.length, "pet", "pets") + " so far. Here is what you can do next.";
+      }
+      box.innerHTML = "";
+      pets.slice(0, 6).forEach(function (p) {
+        var chip = el("span", "pet-chip" + (editing && p.id === editing.id ? " is-current" : ""));
+        chip.appendChild(el("span", "e", SPECIES_EMOJI[p.species] || SPECIES_EMOJI.Other));
+        chip.appendChild(document.createTextNode(p.name));
+        box.appendChild(chip);
+      });
+      if (pets.length > 6) box.appendChild(el("span", "pet-chip", "+" + (pets.length - 6)));
+    }
+
     $("petName").addEventListener("input", function () { updatePreview(false); });
     $("breed").addEventListener("input", function () { updatePreview(false); });
-    $("species").addEventListener("change", function () { updatePreview(true); });
+    $("species").addEventListener("change", function () {
+      updatePreview(true);
+      renderCare($("species").value, true);
+    });
     updatePreview(false);
+    renderCare($("species").value, false);
+    renderPetsSoFar();
 
     $("petForm").addEventListener("submit", function (e) {
       e.preventDefault();
