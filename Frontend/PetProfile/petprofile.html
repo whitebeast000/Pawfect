@@ -138,25 +138,15 @@
                     <a
                         class="petprofile-tab"
                         id="weightTrackingLink"
-                        href="../WeightTracking/Weight.html">
+                        href="../Health/WeightTracking/Weight.html">
                         Weight Tracking
                     </a>
 
                     <a
                         class="petprofile-tab"
                         id="vaccinationLink"
-                        href="../Vaccination/Vaccination.html">
+                        href="../Health/Vaccination/Vaccination.html">
                         Vaccination
-                    </a>
-
-                    <a
-                        class="petprofile-tab"
-                        href="../DailyCare/DailyCare.html">
-                        Care
-                    </a>
-
-                    <a class="petprofile-tab" href="#activity-panel">
-                        History
                     </a>
 
                 </nav>
@@ -363,10 +353,10 @@
     const vaccinationLink = document.getElementById("vaccinationLink");
 
     weightLink.href =
-        `../WeightTracking/Weight.html?pet=${encodeURIComponent(selectedPetName)}`;
+        `../Health/WeightTracking/Weight.html?pet=${encodeURIComponent(selectedPetName)}`;
 
     vaccinationLink.href =
-        `../Vaccination/Vaccination.html?pet=${encodeURIComponent(selectedPetName)}`;
+        `../Health/Vaccination/Vaccination.html?pet=${encodeURIComponent(selectedPetName)}`;
 </script>
 
 </body>
