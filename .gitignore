@@ -1,3 +1,31 @@
 # Environment variables and secrets
 .env
-Backend/.env
+.env.*
+!.env.example
+
+# PHP dependencies
+Backend/vendor/
+
+# Node.js dependencies
+Frontend/node_modules/
+
+# Build outputs
+Frontend/dist/
+Frontend/build/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE settings
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.cache
